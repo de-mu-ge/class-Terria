@@ -30,7 +30,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--debug", action="store_true", help="显示调试信息")
     parser.add_argument("--no-audio", action="store_true", help="禁用音频")
     parser.add_argument("--window-scale", type=int, default=None, help="窗口整数倍缩放，默认取配置")
-    parser.add_argument("--max-seconds", type=float, default=600.0, help="最长运行时间")
+    parser.add_argument("--max-seconds", type=float, default=600.0,
+                        help="最长运行时间（秒）；<=0 表示不限时，手动试玩用 --max-seconds 0")
     parser.add_argument("--check-assets", action="store_true", help="检查并列出缺失素材")
     parser.add_argument("--list-scenes", action="store_true", help="列出所有场景")
     parser.add_argument("--smoke", action="store_true",

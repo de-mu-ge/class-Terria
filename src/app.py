@@ -156,7 +156,7 @@ class Application:
             elif self._elapsed - self._handoff_at > 1.5:
                 log.info("自动测试：已抵达生存模式占位画面，退出")
                 self._running = False
-        if self._elapsed > self.options.max_seconds:
+        if self.options.max_seconds > 0 and self._elapsed > self.options.max_seconds:
             log.warning("超过最大运行时长 %.0fs，自动退出", self.options.max_seconds)
             self._running = False
 
