@@ -1,0 +1,150 @@
+{
+  "tile_size": 16,
+  "tiles": [
+    {
+      "id": 0,
+      "key": "air",
+      "name": "空气",
+      "solid": false,
+      "hardness": 0,
+      "tool": "none",
+      "drop": null,
+      "light": 0,
+      "color": "#101822",
+      "pattern": "none"
+    },
+    {
+      "id": 1,
+      "key": "grass",
+      "name": "草地",
+      "solid": true,
+      "hardness": 0.35,
+      "tool": "pickaxe",
+      "drop": "dirt",
+      "light": 0,
+      "color": "#4E8C5A",
+      "pattern": "grass"
+    },
+    {
+      "id": 2,
+      "key": "dirt",
+      "name": "泥土",
+      "solid": true,
+      "hardness": 0.4,
+      "tool": "pickaxe",
+      "drop": "dirt",
+      "light": 0,
+      "color": "#7A5A3A",
+      "pattern": "dirt"
+    },
+    {
+      "id": 3,
+      "key": "stone",
+      "name": "石块",
+      "solid": true,
+      "hardness": 1.1,
+      "tool": "pickaxe",
+      "drop": "stone",
+      "light": 0,
+      "color": "#5A6470",
+      "pattern": "stone"
+    },
+    {
+      "id": 4,
+      "key": "copper",
+      "name": "铜矿",
+      "solid": true,
+      "hardness": 1.5,
+      "tool": "pickaxe",
+      "drop": "copper_ore",
+      "light": 0,
+      "color": "#B06A3C",
+      "pattern": "ore"
+    },
+    {
+      "id": 5,
+      "key": "iron",
+      "name": "铁矿",
+      "solid": true,
+      "hardness": 2.2,
+      "tool": "pickaxe",
+      "drop": "iron_ore",
+      "light": 0,
+      "color": "#9AA6B4",
+      "pattern": "ore"
+    },
+    {
+      "id": 6,
+      "key": "trunk",
+      "name": "树干",
+      "solid": true,
+      "hardness": 1.4,
+      "tool": "axe",
+      "drop": "wood",
+      "light": 0,
+      "color": "#6B4A2F",
+      "pattern": "bark"
+    },
+    {
+      "id": 7,
+      "key": "leaves",
+      "name": "树叶",
+      "solid": false,
+      "hardness": 0.12,
+      "tool": "axe",
+      "drop": null,
+      "light": 0,
+      "color": "#3E7A4E",
+      "pattern": "leaves"
+    },
+    {
+      "id": 8,
+      "key": "planks",
+      "name": "木板",
+      "solid": true,
+      "hardness": 0.5,
+      "tool": "pickaxe",
+      "drop": "planks",
+      "light": 0,
+      "color": "#8A6A45",
+      "pattern": "planks"
+    },
+    {
+      "id": 9,
+      "key": "brick",
+      "name": "石砖",
+      "solid": true,
+      "hardness": 0.9,
+      "tool": "pickaxe",
+      "drop": "stone_brick",
+      "light": 0,
+      "color": "#6E7885",
+      "pattern": "brick"
+    },
+    {
+      "id": 10,
+      "key": "workbench",
+      "name": "工作台",
+      "solid": false,
+      "hardness": 0.4,
+      "tool": "any",
+      "drop": "workbench",
+      "light": 0,
+      "color": "#9A7A50",
+      "pattern": "bench",
+      "station": "workbench"
+    },
+    {
+      "id": 11,
+      "key": "torch",
+      "name": "火把",
+      "solid": false,
+      "hardness": 0.05,
+      "tool": "any",
+      "drop": "torch",
+      "light": 15,
+      "color": "#FFD9A0",
+      "pattern": "torch"
+    }
+  ]
+}

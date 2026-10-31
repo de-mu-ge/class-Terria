@@ -1,0 +1,88 @@
+{
+  "width_tiles": 256,
+  "height_tiles": 160,
+  "seed": 20260214,
+  "surface": {
+    "base_height": 58,
+    "amplitude": 7,
+    "noise_scale": 0.035,
+    "detail_scale": 0.11,
+    "detail_amplitude": 2
+  },
+  "layers": {
+    "grass": 1,
+    "dirt_min": 5,
+    "dirt_max": 11
+  },
+  "caves": {
+    "count": 34,
+    "radius_min": 2,
+    "radius_max": 4,
+    "min_depth": 12,
+    "max_depth": 150,
+    "steps": [
+      4,
+      8
+    ]
+  },
+  "ores": [
+    {
+      "tile": "copper",
+      "count": 110,
+      "radius": [
+        1,
+        2
+      ],
+      "depth": [
+        4,
+        60
+      ]
+    },
+    {
+      "tile": "iron",
+      "count": 70,
+      "radius": [
+        1,
+        2
+      ],
+      "depth": [
+        28,
+        150
+      ]
+    }
+  ],
+  "trees": {
+    "spacing": [
+      5,
+      14
+    ],
+    "height": [
+      5,
+      9
+    ],
+    "canopy_radius": 2,
+    "trunk_tile": "trunk",
+    "leaf_tile": "leaves"
+  },
+  "player": {
+    "spawn_x_ratio": 0.5,
+    "spawn_clear_tiles": 4,
+    "start_items": [
+      {
+        "item": "copper_pickaxe",
+        "count": 1
+      },
+      {
+        "item": "copper_axe",
+        "count": 1
+      }
+    ]
+  },
+  "light": {
+    "max": 15,
+    "air_decay": 1,
+    "solid_decay": 2,
+    "sky_light": 15,
+    "darkness_alpha": 0.88
+  }
+}

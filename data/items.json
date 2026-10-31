@@ -1,0 +1,101 @@
+{
+  "items": [
+    { "id": "dirt", "name": "泥土", "kind": "block", "tile": "dirt", "color": "#7A5A3A", "stack": 999 },
+    { "id": "stone", "name": "石块", "kind": "block", "tile": "stone", "color": "#5A6470", "stack": 999 },
+    { "id": "wood", "name": "木材", "kind": "block", "tile": "trunk", "color": "#6B4A2F", "stack": 999 },
+    { "id": "planks", "name": "木板", "kind": "block", "tile": "planks", "color": "#8A6A45", "stack": 999 },
+    { "id": "stone_brick", "name": "石砖", "kind": "block", "tile": "brick", "color": "#6E7885", "stack": 999 },
+    { "id": "copper_ore", "name": "铜矿", "kind": "material", "color": "#B06A3C", "stack": 999 },
+    { "id": "iron_ore", "name": "铁矿", "kind": "material", "color": "#9AA6B4", "stack": 999 },
+    { "id": "workbench", "name": "工作台", "kind": "furniture", "tile": "workbench", "color": "#9A7A50", "stack": 99 },
+    { "id": "torch", "name": "火把", "kind": "furniture", "tile": "torch", "color": "#FFD9A0", "stack": 99 },
+    { "id": "copper_pickaxe", "name": "铜镐", "kind": "tool", "tool": "pickaxe", "power": 1.0, "color": "#B06A3C", "stack": 1, "icon": "pickaxe" },
+    { "id": "copper_axe", "name": "铜斧", "kind": "tool", "tool": "axe", "power": 1.0, "color": "#B06A3C", "stack": 1, "icon": "axe" },
+    { "id": "copper_sword", "name": "铜剑", "kind": "tool", "tool": "sword", "power": 1.0, "color": "#B06A3C", "stack": 1, "icon": "sword" },
+    { "id": "iron_pickaxe", "name": "铁镐", "kind": "tool", "tool": "pickaxe", "power": 1.7, "color": "#9AA6B4", "stack": 1, "icon": "pickaxe" },
+    { "id": "iron_axe", "name": "铁斧", "kind": "tool", "tool": "axe", "power": 1.7, "color": "#9AA6B4", "stack": 1, "icon": "axe" }
+  ],
+  "recipes": [
+    {
+      "id": "planks",
+      "output": "planks",
+      "count": 1,
+      "station": null,
+      "ingredients": [{ "item": "wood", "count": 1 }]
+    },
+    {
+      "id": "workbench",
+      "output": "workbench",
+      "count": 1,
+      "station": null,
+      "ingredients": [{ "item": "wood", "count": 10 }]
+    },
+    {
+      "id": "stone_brick",
+      "output": "stone_brick",
+      "count": 1,
+      "station": "workbench",
+      "ingredients": [{ "item": "stone", "count": 2 }]
+    },
+    {
+      "id": "torch",
+      "output": "torch",
+      "count": 2,
+      "station": "workbench",
+      "ingredients": [
+        { "item": "planks", "count": 3 },
+        { "item": "copper_ore", "count": 1 }
+      ]
+    },
+    {
+      "id": "copper_pickaxe",
+      "output": "copper_pickaxe",
+      "count": 1,
+      "station": "workbench",
+      "ingredients": [
+        { "item": "copper_ore", "count": 8 },
+        { "item": "wood", "count": 5 }
+      ]
+    },
+    {
+      "id": "copper_axe",
+      "output": "copper_axe",
+      "count": 1,
+      "station": "workbench",
+      "ingredients": [
+        { "item": "copper_ore", "count": 6 },
+        { "item": "wood", "count": 5 }
+      ]
+    },
+    {
+      "id": "copper_sword",
+      "output": "copper_sword",
+      "count": 1,
+      "station": "workbench",
+      "ingredients": [
+        { "item": "copper_ore", "count": 7 },
+        { "item": "wood", "count": 3 }
+      ]
+    },
+    {
+      "id": "iron_pickaxe",
+      "output": "iron_pickaxe",
+      "count": 1,
+      "station": "workbench",
+      "ingredients": [
+        { "item": "iron_ore", "count": 10 },
+        { "item": "wood", "count": 5 }
+      ]
+    },
+    {
+      "id": "iron_axe",
+      "output": "iron_axe",
+      "count": 1,
+      "station": "workbench",
+      "ingredients": [
+        { "item": "iron_ore", "count": 8 },
+        { "item": "wood", "count": 5 }
+      ]
+    }
+  ]
+}

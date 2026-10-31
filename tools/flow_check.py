@@ -93,12 +93,13 @@ def main() -> int:
         scene.director.autoplay = True
     for _ in range(int(120 / STEP)):
         app2._update(STEP)
-        if app2.stack.top.scene_id == "survival":
+        if app2.stack.top.scene_id == "sandbox":
             break
-    check(app2.stack.top.scene_id == "survival", "Scene 07 结束后进入生存占位画面")
+    check(app2.stack.top.scene_id == "sandbox", "Scene 07 结束后进入沙盒玩法场景")
     top = app2.stack.top
-    check(getattr(top, "_hud", None) is not None and top._hud.visible, "生存画面显示 HUD")
-    check(getattr(top, "_task", None) is not None and top._task.visible, "生存画面显示初始任务卡")
+    check(getattr(top, "_world", None) is not None, "沙盒世界已生成")
+    check(getattr(top, "_inventory", None) is not None
+          and top._inventory.count("copper_pickaxe") == 1, "沙盒初始装备就位")
     app2._shutdown()
 
     print("6) 退出后重建")

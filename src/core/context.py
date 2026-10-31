@@ -9,6 +9,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Protocol
 
+from .input_state import MouseState
+
 if TYPE_CHECKING:  # pragma: no cover
     from ..assets.paths import AssetPaths
     from ..audio.audio import AudioService
@@ -67,6 +69,7 @@ class SceneContext:
     config: "GameConfig"
     state: GameState
     router: SceneRouter
+    mouse: MouseState = field(default_factory=MouseState)
     headless: bool = False
     debug: bool = False
 

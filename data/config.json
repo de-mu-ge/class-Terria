@@ -62,7 +62,9 @@
     "hud_slot": "#111A24",
     "weather_overcast": "#22303F",
     "signal_ok": "#A9BCCF",
-    "signal_lost": "#C2453D"
+    "signal_lost": "#C2453D",
+    "sky_day_top": "#2C4059",
+    "sky_day_bottom": "#8099B2"
   },
   "alpha": {
     "dialog_bg": 0.82,
@@ -168,6 +170,14 @@
         "size": 24
       },
       "debug": {
+        "family": "pixel",
+        "size": 12
+      },
+      "sandbox_ui": {
+        "family": "pixel",
+        "size": 24
+      },
+      "sandbox_small": {
         "family": "pixel",
         "size": 12
       }
@@ -632,6 +642,48 @@
         "wave": "square",
         "volume": 0.18,
         "decay": 3.0
+      },
+      "dig_soft": {
+        "type": "noise",
+        "duration": 0.06,
+        "volume": 0.18,
+        "lowpass": 0.55
+      },
+      "dig_hard": {
+        "type": "noise",
+        "duration": 0.08,
+        "volume": 0.26,
+        "lowpass": 0.28
+      },
+      "chop": {
+        "type": "noise",
+        "duration": 0.1,
+        "volume": 0.3,
+        "lowpass": 0.38
+      },
+      "place": {
+        "type": "tone",
+        "freq": 246,
+        "duration": 0.06,
+        "wave": "square",
+        "volume": 0.18,
+        "decay": 10.0
+      },
+      "craft": {
+        "type": "tone",
+        "freq": 660,
+        "duration": 0.14,
+        "wave": "sine",
+        "volume": 0.24,
+        "decay": 5.0
+      },
+      "pickup": {
+        "type": "tone",
+        "freq": 988,
+        "duration": 0.07,
+        "wave": "sine",
+        "volume": 0.2,
+        "decay": 8.0
       }
     },
     "ambience": {
@@ -750,6 +802,58 @@
       "← → / A D　移动（验证操作权已交接）",
       "Esc　返回开始界面"
     ],
-    "placeholder_tag": "占位"
+    "placeholder_tag": "占位",
+    "sandbox_inventory_title": "背包（E 关闭）",
+    "sandbox_crafting_title": "合成（C 关闭）",
+    "sandbox_station_ok": "工作台已就位",
+    "sandbox_need_station": "需要工作台",
+    "sandbox_need_pickaxe": "需要镐类工具",
+    "sandbox_need_axe": "需要斧类工具"
+  },
+  "sandbox": {
+    "physics": {
+      "gravity": 1000.0,
+      "max_fall": 900.0,
+      "move_speed": 148.0,
+      "move_accel": 1500.0,
+      "friction": 1900.0,
+      "jump_velocity": 342.0,
+      "reach_tiles": 5.5
+    },
+    "inventory_slots": 32,
+    "hotbar_slots": 8,
+    "slot_size": 40,
+    "slot_gap": 4,
+    "icon_scale": 2,
+    "hotbar": {
+      "y": 492,
+      "slots": 8
+    },
+    "inventory": {
+      "panel": [
+        300,
+        236,
+        360,
+        224
+      ],
+      "cols": 8,
+      "rows": 4
+    },
+    "crafting": {
+      "panel": [
+        572,
+        56,
+        372,
+        436
+      ],
+      "row_height": 34
+    },
+    "camera_lerp": 8.0,
+    "darkness_alpha": 0.86,
+    "hint": "E 背包　C 合成　左键 挖掘/采集　右键 放置　空格 跳跃　1-8 切换　Esc 菜单",
+    "player_light": {
+      "radius_tiles": 7.5,
+      "strength": 14
+    }
   }
 }

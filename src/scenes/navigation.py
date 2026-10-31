@@ -37,10 +37,10 @@ class Router:
 
         return lambda: CutsceneScene(self._ctx_factory(), scene_id)
 
-    def _survival_factory(self) -> Callable[[], Scene]:
-        from .survival import SurvivalScene
+    def _sandbox_factory(self) -> Callable[[], Scene]:
+        from .sandbox import SandboxScene
 
-        return lambda: SurvivalScene(self._ctx_factory())
+        return lambda: SandboxScene(self._ctx_factory())
 
     # --- 场景切换 -----------------------------------------------------
     def goto_title(self) -> None:
@@ -66,7 +66,7 @@ class Router:
         self._stack.set(self._cutscene_factory(spec.next_scene))
 
     def handoff_to_gameplay(self) -> None:
-        self._stack.set(self._survival_factory())
+        self._stack.set(self._sandbox_factory())
 
     def open_settings(self) -> None:
         self._stack.push(self._settings_factory())

@@ -18,6 +18,7 @@ from .assets.paths import AssetPaths
 from .audio.audio import AudioService
 from .core.context import GameState, SceneContext
 from .core.events import InputEvent, InputKind
+from .core.input_state import MouseState
 from .core.game_loop import FixedTimestepLoop
 from .core.resource_manager import ResourceManager
 from .core.scene_stack import SceneStack
@@ -80,6 +81,7 @@ class Application:
         self.audio = AudioService(self.config, self.paths, enabled=not options.no_audio)
         self.audio.init()
 
+        self.mouse = MouseState()
         self.ctx = SceneContext(
             renderer=self.renderer,
             resources=self.resources,
@@ -89,6 +91,7 @@ class Application:
             config=self.config,
             state=self.state,
             router=None,  # type: ignore[arg-type]
+            mouse=self.mouse,
             headless=options.headless or options.autoplay,
             debug=options.debug,
         )
@@ -101,6 +104,11 @@ class Application:
     # --- 场景装配 -----------------------------------------------------
     def _bind_initial_scene(self) -> None:
         if self.options.scene:
+            if str(self.options.scene).lower() in ("sandbox", "game", "play"):
+                from .scenes.sandbox import SandboxScene
+
+                self.stack.set(lambda: SandboxScene(self.ctx))
+                return
             scene_id = normalize_scene_id(self.options.scene)
             if not self.data.has_scene(scene_id):
                 raise SystemExit(f"没有这个场景：{self.options.scene}")
@@ -142,7 +150,7 @@ class Application:
         self.stack.update(dt)
         if self.router.quit_requested:
             self._running = False
-        if self.state.current_scene_id == "survival" and self.options.quit_on_handoff:
+        if self.state.current_scene_id in ("survival", "sandbox") and self.options.quit_on_handoff:
             if self._handoff_at is None:
                 self._handoff_at = self._elapsed
             elif self._elapsed - self._handoff_at > 1.5:
@@ -204,18 +212,40 @@ class Application:
                 events.append(InputEvent(InputKind.FAST_FORWARD_START))
             elif event.key == pygame.K_F1:
                 events.append(InputEvent(InputKind.TOGGLE_DEBUG))
+            else:
+                key = self._key_name(event.key)
+                if key:
+                    events.append(InputEvent(InputKind.KEY, key=key))
         elif event.type == pygame.KEYUP:
             if event.key in (pygame.K_LEFT, pygame.K_a, pygame.K_RIGHT, pygame.K_d):
                 events.append(InputEvent(InputKind.MOVE_STOP))
             elif event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
                 events.append(InputEvent(InputKind.FAST_FORWARD_END))
-        elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            events.append(InputEvent(InputKind.CLICK,
-                                     pos=(int(event.pos[0] / scale), int(event.pos[1] / scale))))
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            pos = (int(event.pos[0] / scale), int(event.pos[1] / scale))
+            self.mouse.move(pos)
+            self.mouse.set_button(event.button, True)
+            if event.button == 1:
+                events.append(InputEvent(InputKind.CLICK, pos=pos))
+            elif event.button == 3:
+                events.append(InputEvent(InputKind.CLICK_RIGHT, pos=pos))
+        elif event.type == pygame.MOUSEBUTTONUP:
+            pos = (int(event.pos[0] / scale), int(event.pos[1] / scale))
+            self.mouse.move(pos)
+            self.mouse.set_button(event.button, False)
         elif event.type == pygame.MOUSEMOTION:
-            events.append(InputEvent(InputKind.POINTER,
-                                     pos=(int(event.pos[0] / scale), int(event.pos[1] / scale))))
+            pos = (int(event.pos[0] / scale), int(event.pos[1] / scale))
+            self.mouse.move(pos)
+            events.append(InputEvent(InputKind.POINTER, pos=pos))
         return events
+
+    @staticmethod
+    def _key_name(key: int) -> str | None:
+        """普通按键 → 短名（玩法场景用）。"""
+        if pygame.K_1 <= key <= pygame.K_9:
+            return str(key - pygame.K_0)
+        mapping = {pygame.K_e: "e", pygame.K_c: "c", pygame.K_TAB: "tab"}
+        return mapping.get(key)
 
     # --- 收尾 ---------------------------------------------------------
     def _shutdown(self) -> None:

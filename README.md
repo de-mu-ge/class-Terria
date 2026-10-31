@@ -22,10 +22,11 @@ pip install -r requirements.txt
 
 ```bash
 python -m src                     # 从开始界面启动，正常游玩
+python -m src --scene sandbox     # 直接进沙盒玩法（类 Terraria 原型，见第 10 节）
 python -m src --scene 03          # 单独调试某个 Scene（进入该场后仍会自然接下一场）
 python -m src --list-scenes       # 列出全部场景与演出指令数
 python -m src --check-assets      # 检查素材缺口（缺图清单的唯一数据来源）
-python -m src --smoke --headless  # 自检：开始界面 → 01…07 → 生存占位，自动跑完退出
+python -m src --smoke --headless  # 自检：开始界面 → 01…07 → 沙盒，自动跑完退出
 ```
 
 常用参数：
@@ -58,18 +59,22 @@ python -m src --smoke --headless  # 自检：开始界面 → 01…07 → 生存
 
 ```
 src/
-  core/     引擎无关层：FixedTimestepLoop、SceneStack、StateMachine、Timeline、ResourceManager、类型/事件
+  core/     引擎无关层：FixedTimestepLoop、SceneStack、StateMachine、Timeline、ResourceManager、类型/事件/鼠标状态
   render/   Renderer 抽象 + PygameRenderer（960×540 逻辑画布，整数倍最近邻放大）
-  ui/       对话框、名字条、手机群聊、广播字幕、HUD/信号、任务卡、操作提示、照片定格、菜单/确认/滑条、占位纸片
-  scenes/   Scene 基类、数据驱动演出（Director/Stage/Effects）、title/settings/survival、路由
+  ui/       对话框、名字条、手机群聊、广播字幕、HUD/信号、任务卡、照片定格、菜单/确认/滑条、占位纸片、粒子、沙盒 UI
+  scenes/   Scene 基类、数据驱动演出（Director/Stage/Effects）、title/settings/sandbox、路由
+  sandbox/  沙盒玩法：地块/物品/配方定义、世界生成、物理、背包、合成、程序化贴图
   data/     数据读取与校验（内容在根目录 data/*.json）
   assets/   素材路径解析（只读）
   art/      程序化像素角色（未知世界占位 Sprite）
 data/
-  config.json      分辨率、帧率、调色板、字体、对话框/HUD/转场所有数值与 UI 文案
+  config.json      分辨率、帧率、调色板、字体、对话框/HUD/转场/粒子/沙盒所有数值与 UI 文案
   characters.json  五名角色、代表色、立绘清单、占位规则
   dialogues.json   全部台词段（含说话人、立绘、表情、动作备注、镜头、音效、停顿）
   scenes.json      7 个 Scene 的舞台、背景、音乐、镜头序列（timeline 指令流）
+  tiles.json       沙盒地块：实心/硬度/工具/掉落/发光/配色
+  items.json       沙盒物品与合成配方
+  world.json       沙盒世界生成参数与光照衰减
 assets/
   backgrounds/prologue/   7 张背景（6 张由视觉稿转码，1 张程序化占位）
   characters/…            角色纸片目录（当前为空 → 占位纸片）、CC0 备用素材
@@ -79,6 +84,8 @@ tools/
   prepare_assets.py       视觉稿 → 游戏背景转码
   fetch_fonts.py          下载并安装两套 OFL 字体（可复现）
   flow_check.py           交互流程自检（菜单、快进、Esc、单独启动、状态干净）
+  sandbox_check.py        沙盒玩法自检（挖矿/砍树/合成/放置/站点）
+  sandbox_shots.py        沙盒取样图与帧率
   verify_script.py        台词与《第一轮剧情.md》逐句比对
   gen_missing_report.py   生成《缺图清单.md》
   scan_secrets.py         推送前密钥自查
@@ -122,6 +129,7 @@ tools/
 | 缺图不崩溃，显示占位纸片 | ✅ | 当前 28 张纸片全缺，全流程正常 |
 | 全程无 traceback、无黑屏卡死 | ✅ | `--smoke` 跑完 7 场 + 生存占位，退出码 0 |
 | 退出后重进状态干净 | ✅ | `tools/flow_check.py` 第 6 项：已读记录清空、回到开始界面 |
+| 沙盒玩法可玩（挖矿 / 砍树 / 合成 / 放置 / 站点限制） | ✅ | `python tools/sandbox_check.py` 全通过；`--scene sandbox` 直接试玩 |
 
 ## 7. 数据怎么改（不动代码）
 
@@ -154,6 +162,8 @@ tools/
 ```bash
 python tools/verify_script.py       # 台词逐句比对（应输出 82 句一致）
 python tools/flow_check.py          # 交互流程自检（应全部通过）
+python tools/sandbox_check.py       # 沙盒玩法自检：挖矿/砍树/合成/放置/站点
+python tools/sandbox_shots.py       # 沙盒四张取样图 + 帧率
 python -m src --check-assets        # 素材缺口
 python tools/gen_missing_report.py  # 重新生成《缺图清单.md》
 python -m src --smoke --headless    # 全流程跑通
@@ -163,3 +173,76 @@ python tools/scan_secrets.py        # 推送前密钥自查（应输出「干净
 > 视觉生图的 `manifest.json` 曾把预签名图片 URL（查询串里带 AK ID）写进仓库，被 GitHub
 > push protection 拦下。现已修掉：`generate_image.py` 只记录对象地址，旧清单用
 > `python tools/scrub_manifest.py` 清洗。新增生图结果后，推送前务必跑一次 `scan_secrets.py`。
+
+## 10. 沙盒玩法原型（类 Terraria 试验田）
+
+> 目的：**用可玩的实现反推下一轮提示词该写什么**。这一版刻意做成「机制齐全、内容单薄」，
+> 用来试手感与数据结构，不是成品关卡。序章 07 结束的交接直接进入这里。
+
+**跑起来**
+
+```bash
+python -m src --scene sandbox
+```
+
+**操作**
+
+| 输入 | 行为 |
+|---|---|
+| A / D 或 ← → | 左右移动（自动上 1 格台阶） |
+| 空格 | 跳跃 |
+| 左键按住 | 对着格子挖掘 / 采集（镐挖石与矿，斧砍树，工具不对会提示） |
+| 右键 | 放置当前选中物品（需要旁边有实心块做依托） |
+| 1–8 | 切换快捷栏 |
+| E / Tab | 背包（点格子拿起 / 放下 / 合并 / 交换） |
+| C | 合成面板（点配方即合成；棕色字表示缺料或缺工作台） |
+| Esc | 关面板；再按返回开始界面（二次确认） |
+
+**已实现的循环**
+
+1. 出生自带铜镐 + 铜斧；
+2. 砍树得木材 → `1 木材 → 1 木板`、`10 木材 → 工作台`（无需站点）；
+3. 放下工作台后，它周围 4 格内解锁站点配方：石砖、火把、铜镐 / 铜斧 / 铜剑、铁镐 / 铁斧；
+4. 挖石头与铜矿 → 在工作台旁合成更好的装备（铁镐 power 1.7 > 铜镐 1.0，挖得更快）；
+5. 火把可放置并真的发光（光照 BFS 会重新扩散）。
+
+**世界与光照**
+
+- 世界 256×160 格（4096×2560px），1 格 16px，与像素规范同网格；
+- 地形：草 → 泥土层（5–11 格）→ 石头，叠加洞穴（随机游走椭圆）与铜/铁矿脉；
+- 树：间距 5–14 列，高 5–9 格，树冠半径 2；砍掉树干后失去支撑的树叶会一并消失；
+- 光照：天空光 + 火把做 BFS 扩散（空气衰减 1、实心衰减 2），玩家自带半径 7.5 格灯光；
+  黑暗按 16 档贴图绘制，不改地形就不重算；
+- 相机跟随并夹在世界边界内，整数像素对齐。
+
+**数据在哪**（改数值不用碰代码）
+
+| 文件 | 内容 |
+|---|---|
+| `data/tiles.json` | 地块：实心、硬度、所需工具、掉落物、发光、配色与花纹 |
+| `data/items.json` | 物品 + 合成配方（产物、数量、所需站点、材料） |
+| `data/world.json` | 世界尺寸、种子、地表噪声、土层、洞穴、矿脉、树、出生点、光照衰减 |
+| `config.json` 的 `sandbox` 段 | 物理参数、槽位尺寸、面板位置、玩家灯光、暗度、操作提示文案 |
+
+**代码结构**
+
+```
+src/sandbox/defs.py       地块 / 物品 / 配方注册表（读 JSON）
+src/sandbox/world.py      世界生成、地块读写、光照 BFS
+src/sandbox/player.py     AABB 物理、跳跃、自动上台阶、触及距离
+src/sandbox/inventory.py  定长槽位背包（前 8 格即快捷栏）
+src/sandbox/crafting.py   站点判定、材料检查、合成与回滚
+src/sandbox/textures.py   程序化地块贴图与物品图标（16×16）
+src/ui/sandbox_ui.py      快捷栏 / 背包 / 合成面板 / 鼠标拖拽 / 提示
+src/scenes/sandbox.py     场景：相机、挖掘、放置、面板、绘制
+```
+
+**这一版故意没做（下一轮可写进提示词）**
+
+- 掉落物实体：现在挖到即入包，没有掉在地上再捡的过程；
+- 战斗与敌人：铜剑已经能合成，但没有可打的目标；
+- 生存数值：生命 / 体温条没有接入（不饿、不冷、不掉血）；
+- 存档：退出即重置，世界每次按同一种子重新生成；
+- 多格家具：工作台按 1×1 处理（Terraria 是 2×1）；
+- 液体、光照传播的平滑插值、昼夜循环、背景视差的多层素材；
+- 合成面板滚动（配方多于 11 条需要滚动/分页）。
