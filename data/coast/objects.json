@@ -1,0 +1,204 @@
+{
+  "objects": [
+    {
+      "id": "driftwood",
+      "name": "漂流木",
+      "kind": "harvestable",
+      "size": [
+        26,
+        12
+      ],
+      "color": "#8A6A45",
+      "accent": "#A9855C",
+      "harvest": {
+        "item": "wood",
+        "count": 2
+      },
+      "zones": [
+        "beach",
+        "intertidal"
+      ],
+      "prompt": "拾取漂流木"
+    },
+    {
+      "id": "stone_small",
+      "name": "石块",
+      "kind": "harvestable",
+      "size": [
+        14,
+        11
+      ],
+      "color": "#7A828E",
+      "accent": "#98A1AD",
+      "harvest": {
+        "item": "stone",
+        "count": 1
+      },
+      "zones": [
+        "beach",
+        "intertidal",
+        "reef"
+      ],
+      "prompt": "捡起石块"
+    },
+    {
+      "id": "shell",
+      "name": "贝壳",
+      "kind": "harvestable",
+      "size": [
+        10,
+        8
+      ],
+      "color": "#F0E0CE",
+      "accent": "#F7C6C0",
+      "harvest": {
+        "item": "shell",
+        "count": 1
+      },
+      "zones": [
+        "beach",
+        "intertidal"
+      ],
+      "prompt": "拾取贝壳"
+    },
+    {
+      "id": "seagrass",
+      "name": "海草",
+      "kind": "harvestable",
+      "size": [
+        12,
+        26
+      ],
+      "color": "#4E8C5A",
+      "accent": "#6FAF74",
+      "harvest": {
+        "item": "fiber",
+        "count": 2
+      },
+      "zones": [
+        "shallow",
+        "seabed"
+      ],
+      "sway": 1.0,
+      "prompt": "采集海草"
+    },
+    {
+      "id": "kelp",
+      "name": "巨藻",
+      "kind": "harvestable",
+      "size": [
+        14,
+        48
+      ],
+      "color": "#3E6E52",
+      "accent": "#5C8F66",
+      "harvest": {
+        "item": "fiber",
+        "count": 3
+      },
+      "zones": [
+        "deep"
+      ],
+      "sway": 1.6,
+      "prompt": "采集巨藻"
+    },
+    {
+      "id": "coral",
+      "name": "珊瑚",
+      "kind": "harvestable",
+      "size": [
+        18,
+        16
+      ],
+      "color": "#D97A8A",
+      "accent": "#F2B0A0",
+      "harvest": {
+        "item": "coral_shard",
+        "count": 1
+      },
+      "zones": [
+        "reef"
+      ],
+      "prompt": "采集珊瑚碎片"
+    },
+    {
+      "id": "crystal",
+      "name": "洞穴晶簇",
+      "kind": "harvestable",
+      "size": [
+        16,
+        20
+      ],
+      "color": "#6FA8D8",
+      "accent": "#BFE0F5",
+      "harvest": {
+        "item": "pearl",
+        "count": 1
+      },
+      "zones": [
+        "cave"
+      ],
+      "light": 9,
+      "prompt": "采集晶簇"
+    },
+    {
+      "id": "campfire",
+      "name": "篝火",
+      "kind": "placeable",
+      "size": [
+        22,
+        16
+      ],
+      "color": "#8A6A45",
+      "accent": "#F2A65A",
+      "light": 12,
+      "prompt": "点燃 / 熄灭"
+    },
+    {
+      "id": "chest",
+      "name": "储物箱",
+      "kind": "placeable",
+      "size": [
+        22,
+        18
+      ],
+      "color": "#9A7A50",
+      "accent": "#C9A227",
+      "prompt": "打开"
+    },
+    {
+      "id": "torch",
+      "name": "火把",
+      "kind": "placeable",
+      "size": [
+        8,
+        20
+      ],
+      "color": "#8A6A45",
+      "accent": "#FFD9A0",
+      "light": 11,
+      "prompt": "取下"
+    },
+    {
+      "id": "beach_grass",
+      "name": "海滩草",
+      "kind": "harvestable",
+      "size": [
+        12,
+        20
+      ],
+      "color": "#8FA35C",
+      "accent": "#B5C77A",
+      "harvest": {
+        "item": "fiber",
+        "count": 1
+      },
+      "zones": [
+        "beach",
+        "coast"
+      ],
+      "sway": 1.0,
+      "prompt": "采集海滩草"
+    }
+  ]
+}

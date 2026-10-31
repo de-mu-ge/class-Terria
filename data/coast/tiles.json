@@ -1,0 +1,67 @@
+{
+  "tile_size": 16,
+  "tiles": [
+    {
+      "id": 0,
+      "key": "air",
+      "name": "空气",
+      "solid": false,
+      "color": "#000000",
+      "pattern": "none"
+    },
+    {
+      "id": 1,
+      "key": "sand",
+      "name": "沙地",
+      "solid": true,
+      "color": "#D8C39A",
+      "dark": "#BBA57C",
+      "pattern": "sand"
+    },
+    {
+      "id": 2,
+      "key": "seabed",
+      "name": "海底沙",
+      "solid": true,
+      "color": "#A89674",
+      "dark": "#8A7A5C",
+      "pattern": "seabed"
+    },
+    {
+      "id": 3,
+      "key": "rock",
+      "name": "岩石",
+      "solid": true,
+      "color": "#5E6673",
+      "dark": "#464E5A",
+      "pattern": "rock"
+    },
+    {
+      "id": 4,
+      "key": "cliff",
+      "name": "海岸岩壁",
+      "solid": true,
+      "color": "#565E6A",
+      "dark": "#3E4550",
+      "pattern": "cliff"
+    },
+    {
+      "id": 5,
+      "key": "cave",
+      "name": "洞穴岩壁",
+      "solid": true,
+      "color": "#3F4652",
+      "dark": "#2E343D",
+      "pattern": "cave"
+    },
+    {
+      "id": 6,
+      "key": "reef",
+      "name": "礁石",
+      "solid": true,
+      "color": "#8A7E6A",
+      "dark": "#6B6152",
+      "pattern": "reef"
+    }
+  ]
+}

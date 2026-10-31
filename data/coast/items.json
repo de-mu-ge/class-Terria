@@ -1,0 +1,33 @@
+{
+  "items": [
+    { "id": "wood", "name": "漂流木", "kind": "material", "color": "#A9855C", "icon": "log", "stack": 99 },
+    { "id": "stone", "name": "石块", "kind": "material", "color": "#8A929E", "icon": "stone", "stack": 99 },
+    { "id": "shell", "name": "贝壳", "kind": "material", "color": "#F0E0CE", "icon": "shell", "stack": 99 },
+    { "id": "fiber", "name": "海草纤维", "kind": "material", "color": "#6FAF74", "icon": "fiber", "stack": 99 },
+    { "id": "coral_shard", "name": "珊瑚碎片", "kind": "material", "color": "#F2B0A0", "icon": "coral", "stack": 99 },
+    { "id": "pearl", "name": "晶簇碎片", "kind": "material", "color": "#BFE0F5", "icon": "gem", "stack": 99 },
+    { "id": "campfire", "name": "篝火", "kind": "placeable", "object": "campfire", "color": "#F2A65A", "icon": "campfire", "stack": 9 },
+    { "id": "chest", "name": "储物箱", "kind": "placeable", "object": "chest", "color": "#C9A227", "icon": "chest", "stack": 9 },
+    { "id": "torch", "name": "火把", "kind": "placeable", "object": "torch", "color": "#FFD9A0", "icon": "torch", "stack": 9 }
+  ],
+  "recipes": [
+    {
+      "id": "campfire",
+      "output": "campfire",
+      "count": 1,
+      "ingredients": [{ "item": "wood", "count": 3 }, { "item": "stone", "count": 2 }]
+    },
+    {
+      "id": "chest",
+      "output": "chest",
+      "count": 1,
+      "ingredients": [{ "item": "wood", "count": 4 }]
+    },
+    {
+      "id": "torch",
+      "output": "torch",
+      "count": 2,
+      "ingredients": [{ "item": "wood", "count": 2 }, { "item": "fiber", "count": 1 }]
+    }
+  ]
+}

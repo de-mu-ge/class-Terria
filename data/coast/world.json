@@ -1,0 +1,89 @@
+{
+  "width_tiles": 320,
+  "height_tiles": 180,
+  "seed": 20260301,
+  "sea_level": 96,
+  "tide": {
+    "amplitude": 1.7,
+    "period": 150.0
+  },
+  "beach": {
+    "start": 46,
+    "end": 132,
+    "height": 90
+  },
+  "cliff": {
+    "end": 46,
+    "top": 72,
+    "face_bottom": 100
+  },
+  "ocean": {
+    "floor_at_shore": 90,
+    "floor_at_deep": 168,
+    "slope_power": 1.35,
+    "reef_start": 186,
+    "reef_end": 246,
+    "reef_height": 6
+  },
+  "cave": {
+    "mouth_x": 32,
+    "mouth_y": 88,
+    "length": 44,
+    "depth": 18,
+    "chamber_radius": 7
+  },
+  "detail": {
+    "noise_scale": 0.055,
+    "noise_amplitude": 1.8,
+    "fine_scale": 0.19,
+    "fine_amplitude": 0.8
+  },
+  "objects": {
+    "driftwood": {
+      "count": 18
+    },
+    "stone_small": {
+      "count": 26
+    },
+    "shell": {
+      "count": 34
+    },
+    "seagrass": {
+      "count": 64
+    },
+    "kelp": {
+      "count": 26
+    },
+    "coral": {
+      "count": 22
+    },
+    "crystal": {
+      "count": 7
+    },
+    "beach_grass": {
+      "count": 40
+    }
+  },
+  "creatures": {
+    "fish_schools": 7,
+    "birds": 4,
+    "crabs": 3
+  },
+  "day": {
+    "length_seconds": 420.0,
+    "start_time": 0.27
+  },
+  "player": {
+    "spawn_x_tiles": 166,
+    "start_items": [
+      {
+        "item": "campfire",
+        "count": 1
+      },
+      {
+        "item": "torch",
+        "count": 2
+      }
+    ]
+  }
+}

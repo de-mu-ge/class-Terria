@@ -38,9 +38,9 @@ class Router:
         return lambda: CutsceneScene(self._ctx_factory(), scene_id)
 
     def _survival_factory(self) -> Callable[[], Scene]:
-        from .survival import SurvivalScene
+        from .coast import CoastScene
 
-        return lambda: SurvivalScene(self._ctx_factory())
+        return lambda: CoastScene(self._ctx_factory())
 
     # --- 场景切换 -----------------------------------------------------
     def goto_title(self) -> None:

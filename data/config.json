@@ -750,6 +750,145 @@
       "← → / A D　移动（验证操作权已交接）",
       "Esc　返回开始界面"
     ],
-    "placeholder_tag": "占位"
+    "placeholder_tag": "占位",
+    "coast_inventory": "行囊",
+    "coast_inventory_hint": "前 8 格 = 快捷栏",
+    "coast_craft": "制作",
+    "coast_chest": "储物箱"
+  },
+  "coast": {
+    "physics": {
+      "gravity": 1200.0,
+      "max_fall": 820.0,
+      "walk_speed": 148.0,
+      "walk_accel": 1500.0,
+      "friction": 1700.0,
+      "jump_velocity": 400.0,
+      "crouch_speed": 62.0,
+      "water_speed": 112.0,
+      "water_accel": 760.0,
+      "water_gravity": 88.0,
+      "water_buoyancy": 210.0,
+      "swim_up": 430.0,
+      "swim_down": 330.0,
+      "water_drag": 2.6,
+      "max_swim_up": 190.0,
+      "max_swim_down": 170.0,
+      "step_up": 16.0
+    },
+    "camera_lerp": 5.0,
+    "water": {
+      "surface_alpha": 138,
+      "deep_alpha": 238,
+      "shaft_alpha": 18,
+      "shaft_count": 4,
+      "snow_count": 70
+    },
+    "light": {
+      "player_strength": 13,
+      "player_radius_tiles": 6.5,
+      "cave_alpha": 178,
+      "mouth_strength": 13
+    },
+    "day": {
+      "length_seconds": 420.0,
+      "start_time": 0.27,
+      "phases": [
+        {
+          "t": 0.0,
+          "label": "深夜",
+          "sky_top": "#0E1622",
+          "sky_bottom": "#22303F",
+          "ambient": "#0B1219",
+          "ambient_alpha": 0.62,
+          "water": "#1B2A3A",
+          "light": 0.18
+        },
+        {
+          "t": 0.18,
+          "label": "黎明",
+          "sky_top": "#3E4F6A",
+          "sky_bottom": "#C98F72",
+          "ambient": "#3E5A7A",
+          "ambient_alpha": 0.3,
+          "water": "#3A6A80",
+          "light": 0.45
+        },
+        {
+          "t": 0.28,
+          "label": "清晨",
+          "sky_top": "#7FB4D6",
+          "sky_bottom": "#F2DFC4",
+          "ambient": "#FFD9A0",
+          "ambient_alpha": 0.1,
+          "water": "#4E9BB4",
+          "light": 0.78
+        },
+        {
+          "t": 0.5,
+          "label": "正午",
+          "sky_top": "#5FA8D8",
+          "sky_bottom": "#CFE7F2",
+          "ambient": "#FFFFFF",
+          "ambient_alpha": 0.0,
+          "water": "#3FA3BE",
+          "light": 1.0
+        },
+        {
+          "t": 0.72,
+          "label": "午后",
+          "sky_top": "#68A6CE",
+          "sky_bottom": "#E8DCC0",
+          "ambient": "#FFE9C8",
+          "ambient_alpha": 0.06,
+          "water": "#3E94AE",
+          "light": 0.9
+        },
+        {
+          "t": 0.84,
+          "label": "黄昏",
+          "sky_top": "#5A5A80",
+          "sky_bottom": "#E08A5A",
+          "ambient": "#E4712F",
+          "ambient_alpha": 0.24,
+          "water": "#4E7088",
+          "light": 0.5
+        },
+        {
+          "t": 0.92,
+          "label": "入夜",
+          "sky_top": "#1B2433",
+          "sky_bottom": "#3E5A7A",
+          "ambient": "#101822",
+          "ambient_alpha": 0.5,
+          "water": "#26364A",
+          "light": 0.28
+        },
+        {
+          "t": 1.0,
+          "label": "深夜",
+          "sky_top": "#0E1622",
+          "sky_bottom": "#22303F",
+          "ambient": "#0B1219",
+          "ambient_alpha": 0.62,
+          "water": "#1B2A3A",
+          "light": 0.18
+        }
+      ]
+    },
+    "texts": {
+      "zone_beach": "沙滩",
+      "zone_coast": "海岸",
+      "zone_intertidal": "潮间带",
+      "zone_shallow": "浅海",
+      "zone_seabed": "海草床",
+      "zone_reef": "礁石区",
+      "zone_deep": "深水区",
+      "zone_cave": "洞穴",
+      "zone_solid": "岩壁",
+      "tide_rise": "涨潮",
+      "tide_fall": "退潮"
+    },
+    "controls": "A/D 移动　空格 跳跃·上浮　S 下蹲·下潜　E 交互　F 放置　I 行囊　C 制作　1-8 选择　Esc 菜单"
   }
 }

@@ -91,14 +91,14 @@ def main() -> int:
     scene = app2.stack.top
     if hasattr(scene, "director") and scene.director is not None:
         scene.director.autoplay = True
-    for _ in range(int(120 / STEP)):
+    for _ in range(int(150 / STEP)):
         app2._update(STEP)
-        if app2.stack.top.scene_id == "survival":
+        if app2.stack.top.scene_id == "coast":
             break
-    check(app2.stack.top.scene_id == "survival", "Scene 07 结束后进入生存占位画面")
+    check(app2.stack.top.scene_id == "coast", "Scene 07 结束后进入海岸世界")
     top = app2.stack.top
-    check(getattr(top, "_hud", None) is not None and top._hud.visible, "生存画面显示 HUD")
-    check(getattr(top, "_task", None) is not None and top._task.visible, "生存画面显示初始任务卡")
+    check(getattr(top, "_ui", None) is not None, "海岸画面 UI 已建立")
+    check(getattr(top, "_world", None) is not None, "海岸世界已完成生成")
     app2._shutdown()
 
     print("6) 退出后重建")

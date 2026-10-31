@@ -80,6 +80,8 @@ def main(argv: list[str] | None = None) -> int:
                 capture_times.append(float(chunk))
 
     scene = normalize_scene_id(args.scene) if args.scene else None
+    if args.scene and args.scene.lower() in ("coast", "coastal"):
+        scene = "coast"
     autoplay = args.autoplay or args.smoke
     options = AppOptions(
         scene=scene,

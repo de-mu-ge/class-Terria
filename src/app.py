@@ -18,6 +18,7 @@ from .assets.paths import AssetPaths
 from .audio.audio import AudioService
 from .core.context import GameState, SceneContext
 from .core.events import InputEvent, InputKind
+from .core.input_state import KeyboardState, MouseState
 from .core.game_loop import FixedTimestepLoop
 from .core.resource_manager import ResourceManager
 from .core.scene_stack import SceneStack
@@ -80,6 +81,8 @@ class Application:
         self.audio = AudioService(self.config, self.paths, enabled=not options.no_audio)
         self.audio.init()
 
+        self.mouse = MouseState()
+        self.keys = KeyboardState()
         self.ctx = SceneContext(
             renderer=self.renderer,
             resources=self.resources,
@@ -89,6 +92,8 @@ class Application:
             config=self.config,
             state=self.state,
             router=None,  # type: ignore[arg-type]
+            mouse=self.mouse,
+            keys=self.keys,
             headless=options.headless or options.autoplay,
             debug=options.debug,
         )
@@ -101,6 +106,12 @@ class Application:
     # --- 场景装配 -----------------------------------------------------
     def _bind_initial_scene(self) -> None:
         if self.options.scene:
+            alias = str(self.options.scene).lower()
+            if alias in ("coast", "coastal"):
+                from .scenes.coast import CoastScene
+
+                self.stack.set(lambda: CoastScene(self.ctx))
+                return
             scene_id = normalize_scene_id(self.options.scene)
             if not self.data.has_scene(scene_id):
                 raise SystemExit(f"没有这个场景：{self.options.scene}")
@@ -180,10 +191,31 @@ class Application:
             for item in mapped:
                 self.stack.handle_event(item)
 
+    _HELD_KEYS = {
+        pygame.K_LEFT: "left", pygame.K_a: "left",
+        pygame.K_RIGHT: "right", pygame.K_d: "right",
+        pygame.K_UP: "up", pygame.K_w: "up",
+        pygame.K_DOWN: "down", pygame.K_s: "down",
+        pygame.K_SPACE: "jump",
+    }
+    _LETTER_KEYS = {
+        pygame.K_e: "e", pygame.K_c: "c", pygame.K_i: "i", pygame.K_f: "f",
+        pygame.K_TAB: "tab",
+    }
+
     def _map_event(self, event) -> list[InputEvent]:
         scale = self.renderer.window_scale
         events: list[InputEvent] = []
         if event.type == pygame.KEYDOWN:
+            held = self._HELD_KEYS.get(event.key)
+            if held:
+                self.keys.press(held)
+            letter = self._LETTER_KEYS.get(event.key)
+            if letter:
+                events.append(InputEvent(InputKind.KEY, key=letter))
+            elif pygame.K_1 <= event.key <= pygame.K_8:
+                events.append(InputEvent(InputKind.KEY, key=str(event.key - pygame.K_0)))
+
             if event.key == pygame.K_ESCAPE:
                 events.append(InputEvent(InputKind.CANCEL))
             elif event.key in (pygame.K_UP, pygame.K_w):
@@ -205,16 +237,29 @@ class Application:
             elif event.key == pygame.K_F1:
                 events.append(InputEvent(InputKind.TOGGLE_DEBUG))
         elif event.type == pygame.KEYUP:
+            held = self._HELD_KEYS.get(event.key)
+            if held:
+                self.keys.release(held)
             if event.key in (pygame.K_LEFT, pygame.K_a, pygame.K_RIGHT, pygame.K_d):
                 events.append(InputEvent(InputKind.MOVE_STOP))
             elif event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
                 events.append(InputEvent(InputKind.FAST_FORWARD_END))
-        elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            events.append(InputEvent(InputKind.CLICK,
-                                     pos=(int(event.pos[0] / scale), int(event.pos[1] / scale))))
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            pos = (int(event.pos[0] / scale), int(event.pos[1] / scale))
+            self.mouse.move(pos)
+            self.mouse.set_button(event.button, True)
+            if event.button == 1:
+                events.append(InputEvent(InputKind.CLICK, pos=pos))
+            elif event.button == 3:
+                events.append(InputEvent(InputKind.CLICK_RIGHT, pos=pos))
+        elif event.type == pygame.MOUSEBUTTONUP:
+            pos = (int(event.pos[0] / scale), int(event.pos[1] / scale))
+            self.mouse.move(pos)
+            self.mouse.set_button(event.button, False)
         elif event.type == pygame.MOUSEMOTION:
-            events.append(InputEvent(InputKind.POINTER,
-                                     pos=(int(event.pos[0] / scale), int(event.pos[1] / scale))))
+            pos = (int(event.pos[0] / scale), int(event.pos[1] / scale))
+            self.mouse.move(pos)
+            events.append(InputEvent(InputKind.POINTER, pos=pos))
         return events
 
     # --- 收尾 ---------------------------------------------------------
