@@ -68,7 +68,7 @@ class SurvivalScene(Scene):
         self._hud.show()
         self._hud.set_values(life=0.78, temp=0.55)
         self._load_task(spec)
-        self.ctx.audio.play_ambience("waves")
+        self.ctx.audio.play_ambience(["waves", "wind"])
         self.ctx.audio.play_music("unknown_world")
 
     def _load_task(self, spec) -> None:

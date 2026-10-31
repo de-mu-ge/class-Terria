@@ -305,6 +305,7 @@ class PixelActor:
         self.scale = ctx.config.number("stage", "pixel_sprite_scale", default=2.0)
         self.flip = False
         self.alpha = 1.0
+        self._time = 0.0
 
     def _texture(self, pose: str) -> Texture:
         if pose not in self._textures:
@@ -314,6 +315,9 @@ class PixelActor:
 
     def set_pose(self, pose: str) -> None:
         self.pose = pose
+
+    def update(self, dt: float) -> None:
+        self._time += dt
 
     @property
     def size(self) -> tuple[int, int]:
@@ -326,7 +330,10 @@ class PixelActor:
         texture = self._texture(self.pose)
         width = texture.width * self.scale
         height = texture.height * self.scale
-        rect = Rect(self.x - width / 2 + offset[0], self.ground_y - height + offset[1],
+        # 站立/行走时 1px 呼吸起伏，避免角色像贴图一样完全静止
+        bob = math.sin(self._time * 2.2) * 1.0 if self.pose in ("idle", "walk_1", "walk_2") else 0.0
+        rect = Rect(self.x - width / 2 + offset[0],
+                    self.ground_y - height + offset[1] + bob,
                     width, height)
         renderer.draw_texture(texture, rect, alpha=int(255 * clamp01(self.alpha)),
                               flip_x=self.flip)

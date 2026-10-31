@@ -84,6 +84,7 @@ class HintPanel:
         cfg = ctx.config
         self._panel = cfg.rect("hint", "panel")
         self._line_lh = cfg.number("hint", "line_height", default=20.0)
+        self._title_lh = cfg.number("hint", "title_line_height", default=32.0)
         self._font_title = ctx.resources.font("task_title")
         self._font = ctx.resources.font("hint")
         self._title = ""
@@ -123,7 +124,7 @@ class HintPanel:
         if self._title:
             renderer.draw_text(self._title, (panel.x + 12, y), self._font_title,
                                cfg.color("cold_white"), alpha=alpha)
-            y += self._line_lh
+            y += self._title_lh
         for line in self._lines:
             renderer.draw_text(line, (panel.x + 12, y), self._font,
                                cfg.color("text"), alpha=alpha)

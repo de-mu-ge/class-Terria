@@ -143,7 +143,7 @@ class SceneSpec:
     timeline: tuple[dict[str, Any], ...]
     next_scene: str | None = None
     music: str | None = None
-    ambience: str | None = None
+    ambience: Any = None
     source_file: str = ""
 
     def background(self, bg_id: str) -> BackgroundSpec | None:

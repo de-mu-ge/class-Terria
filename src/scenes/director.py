@@ -24,6 +24,7 @@ from ..ui.dialogue_box import DialogueView
 from ..ui.hud import Hud, SignalWidget
 from ..ui.info_panels import HintPanel, TaskPanel
 from ..ui.photo import PhotoView
+from ..ui.particles import ParticleField
 from ..ui.subtitle import SubtitleBar
 from ..ui.transitions import Fade, Flash, GradientMask
 from .effects import FishJump
@@ -191,6 +192,7 @@ class Director:
         self.subtitle = SubtitleBar(ctx)
         self.photo = PhotoView(ctx)
         self.overlay_mask: GradientMask | None = None
+        self.particles = None  # 粒子演出（樱花 / 雨 / 雾 / 浪花），由 _cmd_particles 创建
         self.hud = Hud(ctx)
         self.signal = SignalWidget(ctx)
         self.task_panel = TaskPanel(ctx)
@@ -251,6 +253,12 @@ class Director:
         self.chat.update(dt)
         self.subtitle.update(dt)
         self.photo.update(dt)
+        if self.sprite is not None:
+            self.sprite.update(dt)
+        if self.particles is not None:
+            self.particles.update(dt)
+            if not self.particles.active:
+                self.particles = None
         self.hud.update(dt)
         self.signal.update(dt)
         self.task_panel.update(dt)
@@ -289,6 +297,10 @@ class Director:
                 self.sprite.draw(renderer, offset=offset)
         else:
             self.dolls.draw(renderer, active_speaker=self._speaker, offset=offset)
+
+        # 粒子在人物之后、遮罩之前：花瓣要“从镜头前飘过”
+        if self.particles is not None:
+            self.particles.draw(renderer)
 
         for effect in self._effects:
             effect.draw(renderer, offset=offset)
@@ -683,6 +695,21 @@ class Director:
         log.warning("未知特效：%s", effect_id)
         return None
 
+    def _cmd_particles(self, command: dict[str, Any]) -> Task | None:
+        preset = command.get("preset")
+        if preset in (None, "", "none", "off", "stop"):
+            if self.particles is not None:
+                self.particles.stop()
+            return None
+        name = str(preset)
+        if self.particles is not None and self.particles.name == name:
+            return None
+        try:
+            self.particles = ParticleField(self.ctx, name)
+        except ValueError:
+            log.exception("粒子预设不存在：%s", name)
+        return None
+
     def _cmd_end(self, command: dict[str, Any]) -> Task | None:
         self.end_kind = "next"
         return None
@@ -728,6 +755,8 @@ class Director:
         self.task_panel.hide()
         self.hud.hide()
         self.signal.hide()
+        if self.particles is not None:
+            self.particles.stop()
 
 
 # --- 过场遮罩适配器 -------------------------------------------------------

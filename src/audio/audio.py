@@ -31,8 +31,8 @@ class AudioService:
         self._mixer_ready = False
         self._sfx_cache: dict[str, object] = {}
         self._ambience_cache: dict[str, object] = {}
-        self._ambient_channel = None
-        self._ambient_id: str | None = None
+        self._ambient_channels: list = []
+        self._ambient_ids: tuple[str, ...] = ()
         self._music_channel = None
         self._music_id: str | None = None
         self._master = float(config.number("audio", "master_volume", default=0.7))
@@ -51,7 +51,9 @@ class AudioService:
             pygame.mixer.pre_init(_SAMPLE_RATE, -16, _CHANNELS, 512)
             pygame.mixer.init()
             pygame.mixer.set_num_channels(12)
-            self._ambient_channel = pygame.mixer.Channel(0)
+            # 0/2/3 用作环境音分层，1 留给音乐
+            self._ambient_channels = [pygame.mixer.Channel(0), pygame.mixer.Channel(2),
+                                      pygame.mixer.Channel(3)]
             self._music_channel = pygame.mixer.Channel(1)
             self._mixer_ready = True
             log.info("音频混音器就绪（%d Hz）", _SAMPLE_RATE)
@@ -75,7 +77,7 @@ class AudioService:
             return
         self._applied_volume = self._master
         try:
-            for channel in (self._ambient_channel, self._music_channel):
+            for channel in [*self._ambient_channels, self._music_channel]:
                 if channel is not None:
                     channel.set_volume(self._master)
         except Exception:  # pragma: no cover
@@ -113,36 +115,48 @@ class AudioService:
         return sound
 
     # --- 环境音 -------------------------------------------------------
-    def play_ambience(self, ambience_id: str | None, volume: float = 1.0) -> None:
-        if not ambience_id:
+    def play_ambience(self, ambience, volume: float = 1.0) -> None:
+        """环境音支持分层：传字符串或列表，例如 ["waves", "wind"]（海浪 + 微风）。"""
+        if not ambience:
             return
-        if not self._mixer_ready or self._ambient_channel is None:
-            self._ambient_id = ambience_id
+        layers = [ambience] if isinstance(ambience, str) else list(ambience)
+        layers = [str(item) for item in layers if item]
+        if not layers:
             return
-        if self._ambient_id == ambience_id:
+        if not self._mixer_ready or not self._ambient_channels:
+            self._ambient_ids = tuple(layers)
             return
-        spec = self._config.value("audio", "ambience", ambience_id, default=None)
-        if spec is None:
-            log.warning("未定义的环境音：%s", ambience_id)
+        if self._ambient_ids == tuple(layers):
             return
-        try:
-            if ambience_id not in self._ambience_cache:
-                self._ambience_cache[ambience_id] = self._make_sound(_synthesise(spec, self._random))
-            sound = self._ambience_cache[ambience_id]
-            self._ambient_channel.stop()
-            self._ambient_channel.set_volume(self._master * float(spec.get("volume", 0.25)) * volume)
-            self._ambient_channel.play(sound, loops=-1)
-            self._ambient_id = ambience_id
-        except Exception:  # pragma: no cover
-            log.debug("环境音播放失败：%s", ambience_id, exc_info=True)
+        self._ambient_ids = tuple(layers)
 
-    def stop_ambience(self) -> None:
-        self._ambient_id = None
-        if self._mixer_ready and self._ambient_channel is not None:
+        for channel in self._ambient_channels:
             try:
-                self._ambient_channel.stop()
+                channel.stop()
             except Exception:  # pragma: no cover
                 pass
+        for channel, ambience_id in zip(self._ambient_channels, layers):
+            spec = self._config.value("audio", "ambience", ambience_id, default=None)
+            if spec is None:
+                log.warning("未定义的环境音：%s", ambience_id)
+                continue
+            try:
+                if ambience_id not in self._ambience_cache:
+                    self._ambience_cache[ambience_id] = self._make_sound(
+                        _synthesise(spec, self._random))
+                channel.set_volume(self._master * float(spec.get("volume", 0.25)) * volume)
+                channel.play(self._ambience_cache[ambience_id], loops=-1)
+            except Exception:  # pragma: no cover
+                log.debug("环境音播放失败：%s", ambience_id, exc_info=True)
+
+    def stop_ambience(self) -> None:
+        self._ambient_ids = ()
+        if self._mixer_ready:
+            for channel in self._ambient_channels:
+                try:
+                    channel.stop()
+                except Exception:  # pragma: no cover
+                    pass
 
     # --- 音乐 ---------------------------------------------------------
     def play_music(self, music_id: str | None, volume: float = 1.0) -> None:

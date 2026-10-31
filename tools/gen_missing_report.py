@@ -122,10 +122,20 @@ def main() -> int:
     # --- 字体 ---
     lines.append("## 4. 字体")
     lines.append("")
+    pixel_fonts = sorted((ROOT / "assets" / "fonts").glob("*fusion-pixel*zh_hans*.ttf")) + \
+        sorted((ROOT / "assets" / "fonts").glob("zpix.ttf"))
+    galgame_fonts = sorted((ROOT / "assets" / "fonts").glob("SourceHanSans*.otf")) + \
+        sorted((ROOT / "assets" / "fonts").glob("NotoSansSC*.otf"))
+    pixel_state = f"已有 `{pixel_fonts[0].name}`（Fusion Pixel，OFL-1.1）" if pixel_fonts else "**缺**"
+    galgame_state = f"已有 `{galgame_fonts[0].name}`（思源黑体，OFL-1.1）" if galgame_fonts \
+        else "**缺**"
     lines.append("| 用途 | 期望 | 现状 |")
     lines.append("|---|---|---|")
-    lines.append("| 像素段落（HUD / 菜单 / 标题） | Zpix 或 Fusion Pixel 12/24px | **缺**，当前退回 `simsun.ttc`（非像素字体） |")
-    lines.append("| 现实段落（对话正文） | 思源黑体 Regular/Medium | 缺，当前退回 `msyh.ttc`（微软雅黑） |")
+    lines.append(f"| 像素段落（HUD / 菜单 / 标题） | Zpix 或 Fusion Pixel 12/24px | {pixel_state} |")
+    lines.append(f"| 现实段落（对话正文） | 思源黑体 Regular/Medium | {galgame_state} |")
+    lines.append("")
+    lines.append("> Zpix 是付费商用授权，故按《整体风格与UI》第 6 节选用并列允许的 "
+                 "Fusion Pixel（`python tools/fetch_fonts.py` 可重新下载）。")
     lines.append("")
     lines.append("补法：把字体文件放进 `assets/fonts/`，"
                  "在 `data/config.json` 的 `fonts.candidates` 里把路径排到最前即可，无需改代码。")
@@ -135,7 +145,8 @@ def main() -> int:
     lines.append("")
     lines.append("- 千早爱音等五人的像素 Sprite：当前是 `src/art/pixel_doll.py` 程序化生成的占位帧"
                  "（倒地 / 呼吸 / 坐起 / 站立 / 行走 2 帧），需要正式 32×64 像素图替换。")
-    lines.append("- 樱花广场的花瓣飘落、雨丝等粒子演出：本轮未做，属可选演出层。")
+    lines.append("- 樱花花瓣 / 雨丝 / 雾团 / 浪花已用数据驱动粒子实现（`src/ui/particles.py`），"
+                 "如需更精细的手绘序列帧可替换。")
     lines.append("")
 
     OUTPUT.write_text("\n".join(lines), encoding="utf-8")

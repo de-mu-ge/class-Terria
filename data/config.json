@@ -70,48 +70,107 @@
     "chat_bubble": 0.92,
     "subtitle_bg": 0.78,
     "hint_bg": 0.72,
-    "task_bg": 0.80,
+    "task_bg": 0.8,
     "menu_dim": 0.62
   },
   "fonts": {
     "candidates": {
       "galgame": [
-        "assets/fonts/SourceHanSansSC-Regular.otf",
+        "assets/fonts/SourceHanSansCN-Regular.otf",
         "assets/fonts/NotoSansSC-Regular.otf",
         "C:/Windows/Fonts/msyh.ttc",
         "C:/Windows/Fonts/Deng.ttf",
         "C:/Windows/Fonts/simhei.ttf"
       ],
       "pixel": [
-        "assets/fonts/zpix.ttf",
-        "assets/fonts/Zpix.ttf",
         "assets/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf",
+        "assets/fonts/zpix.ttf",
         "C:/Windows/Fonts/simsun.ttc",
         "C:/Windows/Fonts/simhei.ttf",
         "C:/Windows/Fonts/msyh.ttc"
       ]
     },
     "roles": {
-      "dialogue": { "family": "galgame", "size": 18 },
-      "name": { "family": "galgame", "size": 18 },
-      "subtitle": { "family": "galgame", "size": 16 },
-      "broadcast_label": { "family": "galgame", "size": 12 },
-      "chat": { "family": "galgame", "size": 14 },
-      "chat_name": { "family": "galgame", "size": 12 },
-      "chat_header": { "family": "galgame", "size": 14 },
-      "menu": { "family": "pixel", "size": 20 },
-      "menu_small": { "family": "pixel", "size": 14 },
-      "title": { "family": "pixel", "size": 44 },
-      "title_sub": { "family": "pixel", "size": 18 },
-      "version": { "family": "pixel", "size": 12 },
-      "hud": { "family": "pixel", "size": 12 },
-      "hud_big": { "family": "pixel", "size": 16 },
-      "task_title": { "family": "pixel", "size": 16 },
-      "task": { "family": "pixel", "size": 14 },
-      "hint": { "family": "pixel", "size": 14 },
-      "confirm": { "family": "pixel", "size": 16 },
-      "photo": { "family": "pixel", "size": 14 },
-      "debug": { "family": "pixel", "size": 12 }
+      "dialogue": {
+        "family": "galgame",
+        "size": 18
+      },
+      "name": {
+        "family": "galgame",
+        "size": 18
+      },
+      "subtitle": {
+        "family": "galgame",
+        "size": 16
+      },
+      "broadcast_label": {
+        "family": "galgame",
+        "size": 12
+      },
+      "chat": {
+        "family": "galgame",
+        "size": 14
+      },
+      "chat_name": {
+        "family": "galgame",
+        "size": 12
+      },
+      "chat_header": {
+        "family": "galgame",
+        "size": 14
+      },
+      "menu": {
+        "family": "pixel",
+        "size": 24
+      },
+      "menu_small": {
+        "family": "pixel",
+        "size": 12
+      },
+      "title": {
+        "family": "pixel",
+        "size": 48
+      },
+      "title_sub": {
+        "family": "pixel",
+        "size": 24
+      },
+      "version": {
+        "family": "pixel",
+        "size": 12
+      },
+      "hud": {
+        "family": "pixel",
+        "size": 12
+      },
+      "hud_big": {
+        "family": "pixel",
+        "size": 24
+      },
+      "task_title": {
+        "family": "pixel",
+        "size": 24
+      },
+      "task": {
+        "family": "pixel",
+        "size": 12
+      },
+      "hint": {
+        "family": "pixel",
+        "size": 12
+      },
+      "confirm": {
+        "family": "pixel",
+        "size": 24
+      },
+      "photo": {
+        "family": "pixel",
+        "size": 24
+      },
+      "debug": {
+        "family": "pixel",
+        "size": 12
+      }
     },
     "line_height": {
       "dialogue": 27,
@@ -121,9 +180,24 @@
     }
   },
   "dialogue": {
-    "panel": [36, 393, 888, 123],
-    "name_bar": [36, 363, 180, 39],
-    "padding": { "left": 18, "right": 18, "top": 15, "bottom": 15 },
+    "panel": [
+      36,
+      393,
+      888,
+      123
+    ],
+    "name_bar": [
+      36,
+      363,
+      180,
+      39
+    ],
+    "padding": {
+      "left": 18,
+      "right": 18,
+      "top": 15,
+      "bottom": 15
+    },
     "border_outer": 2,
     "border_inner": 1,
     "chars_per_second": 40,
@@ -141,10 +215,25 @@
   },
   "camera": {
     "presets": {
-      "hold": { "zoom_mul": 1.0, "duration": 0.0 },
-      "push_in": { "zoom_mul": 1.15, "duration": 0.8, "ease": "out" },
-      "pull_out": { "zoom_mul": 0.87, "duration": 0.8, "ease": "out" },
-      "zoom_out_far": { "zoom_mul": 0.8, "duration": 2.0, "ease": "out" }
+      "hold": {
+        "zoom_mul": 1.0,
+        "duration": 0.0
+      },
+      "push_in": {
+        "zoom_mul": 1.15,
+        "duration": 0.8,
+        "ease": "out"
+      },
+      "pull_out": {
+        "zoom_mul": 0.87,
+        "duration": 0.8,
+        "ease": "out"
+      },
+      "zoom_out_far": {
+        "zoom_mul": 0.8,
+        "duration": 2.0,
+        "ease": "out"
+      }
     },
     "min_zoom": 1.0,
     "max_zoom": 2.6
@@ -153,20 +242,191 @@
     "doll_base_height": 450,
     "doll_width_ratio": 0.6667,
     "doll_clip_y": 393,
-    "shake_default": { "amplitude": 2.5, "frequency": 0.5 },
+    "shake_default": {
+      "amplitude": 2.5,
+      "frequency": 0.5
+    },
     "pixel_sprite_scale": 2,
     "pixel_sprite_ground_y": 430,
     "pipeline_galgame": "galgame",
     "pipeline_pixel": "pixel"
   },
+  "particles": {
+    "presets": {
+      "sakura": {
+        "type": "petal",
+        "count": 34,
+        "spawn_y": [
+          -30,
+          30
+        ],
+        "velocity_x": [
+          -6,
+          14
+        ],
+        "velocity_y": [
+          22,
+          44
+        ],
+        "size": [
+          3,
+          7
+        ],
+        "colors": [
+          "#F4C7D2",
+          "#E8A0B4",
+          "#FFC6D4",
+          "#F2EDE3"
+        ],
+        "alpha": [
+          150,
+          230
+        ],
+        "sway_amplitude": [
+          4,
+          14
+        ],
+        "sway_frequency": [
+          0.15,
+          0.45
+        ],
+        "spin": [
+          0.8,
+          2.4
+        ],
+        "seed": 1101,
+        "label": "樱花花瓣"
+      },
+      "rain": {
+        "type": "rain",
+        "count": 110,
+        "spawn_y": [
+          -40,
+          0
+        ],
+        "velocity_x": [
+          -150,
+          -80
+        ],
+        "velocity_y": [
+          340,
+          480
+        ],
+        "size": [
+          3,
+          6
+        ],
+        "colors": [
+          "#EDEFF2",
+          "#D3DEE9"
+        ],
+        "alpha": [
+          90,
+          170
+        ],
+        "seed": 2202,
+        "label": "雨丝"
+      },
+      "mist": {
+        "type": "mist",
+        "count": 26,
+        "area": [
+          -120,
+          1080
+        ],
+        "spawn_y": [
+          250,
+          460
+        ],
+        "velocity_x": [
+          5,
+          16
+        ],
+        "velocity_y": [
+          0,
+          0
+        ],
+        "size": [
+          5,
+          12
+        ],
+        "colors": [
+          "#D3DEE9",
+          "#A9BCCF"
+        ],
+        "alpha": [
+          16,
+          34
+        ],
+        "seed": 3303,
+        "label": "雾团"
+      },
+      "seaspray": {
+        "type": "spray",
+        "count": 30,
+        "area": [
+          0,
+          960
+        ],
+        "spawn_y": [
+          400,
+          468
+        ],
+        "velocity_x": [
+          -8,
+          8
+        ],
+        "velocity_y": [
+          -16,
+          -6
+        ],
+        "size": [
+          1.5,
+          3
+        ],
+        "colors": [
+          "#D3DEE9",
+          "#F2EDE3"
+        ],
+        "alpha": [
+          110,
+          200
+        ],
+        "seed": 4404,
+        "label": "浪花"
+      }
+    }
+  },
   "hud": {
-    "life_bar": [24, 20, 288, 18],
-    "temp_bar": [24, 46, 288, 18],
+    "life_bar": [
+      24,
+      20,
+      288,
+      18
+    ],
+    "temp_bar": [
+      24,
+      46,
+      288,
+      18
+    ],
     "bar_label_width": 0,
-    "hotbar": { "slots": 8, "slot_size": 96, "y": 432, "gap": 2, "selected_lift": 2, "filled": 1 }
+    "hotbar": {
+      "slots": 8,
+      "slot_size": 96,
+      "y": 432,
+      "gap": 2,
+      "selected_lift": 2,
+      "filled": 1
+    }
   },
   "chat": {
-    "frame": [300, 44, 360, 452],
+    "frame": [
+      300,
+      44,
+      360,
+      452
+    ],
     "header_height": 44,
     "bubble_padding": 10,
     "bubble_radius": 8,
@@ -176,31 +436,63 @@
     "start_y": 64
   },
   "subtitle": {
-    "bar": [132, 396, 696, 64],
+    "bar": [
+      132,
+      396,
+      696,
+      64
+    ],
     "padding": 14,
     "label": "船上广播"
   },
   "photo": {
-    "frame": [250, 62, 460, 416],
+    "frame": [
+      250,
+      62,
+      460,
+      416
+    ],
     "border": 14,
-    "inner": [16, 16, 428, 340],
+    "inner": [
+      16,
+      16,
+      428,
+      340
+    ],
     "caption_y": 372,
     "doll_scale": 0.55,
     "dim_alpha": 0.45
   },
   "task": {
-    "panel": [612, 64, 312, 148],
+    "panel": [
+      612,
+      64,
+      312,
+      148
+    ],
     "padding": 14,
-    "title_line_height": 26,
+    "title_line_height": 36,
     "line_height": 22
   },
   "hint": {
-    "panel": [236, 120, 368, 112],
-    "line_height": 20
+    "panel": [
+      236,
+      96,
+      368,
+      140
+    ],
+    "line_height": 20,
+    "title_line_height": 32
   },
   "signal": {
-    "position": [872, 16],
-    "size": [64, 36],
+    "position": [
+      872,
+      16
+    ],
+    "size": [
+      64,
+      36
+    ],
     "bars": 4,
     "bar_width": 4,
     "bar_gap": 2,
@@ -209,65 +501,222 @@
   },
   "title_screen": {
     "background": "s07_coast.png",
-    "menu_origin": [72, 306],
-    "menu_line_spacing": 24,
-    "title_origin": [72, 176],
-    "title_sub_origin": [76, 232],
+    "menu_origin": [
+      72,
+      292
+    ],
+    "menu_line_spacing": 36,
+    "title_origin": [
+      72,
+      176
+    ],
+    "title_sub_origin": [
+      76,
+      232
+    ],
     "title_underline_width": 260,
     "underline_gap": 30,
-    "vignette": { "top": 120, "bottom": 120, "left": 200, "right": 200 },
+    "vignette": {
+      "top": 120,
+      "bottom": 120,
+      "left": 200,
+      "right": 200
+    },
     "vignette_strength": 0.55,
     "dim_alpha": 0.35,
-    "version_margin": [18, 16]
+    "version_margin": [
+      18,
+      16
+    ]
   },
   "survival": {
-    "panel": [64, 84, 492, 148],
+    "panel": [
+      64,
+      84,
+      492,
+      148
+    ],
     "line_height": 20,
     "title_offset": 14,
     "body_offset": 50,
     "hint_offset": 82
   },
   "settings": {
-    "panel": [240, 150, 480, 240],
-    "slider": [60, 96, 360, 10],
+    "panel": [
+      240,
+      150,
+      480,
+      240
+    ],
+    "slider": [
+      60,
+      96,
+      360,
+      10
+    ],
     "line_height": 24
   },
   "audio": {
     "enabled": true,
     "master_volume": 0.7,
     "sfx": {
-      "message_ping": { "type": "tone", "freq": 1046, "duration": 0.09, "wave": "sine", "volume": 0.35, "decay": 6.0 },
-      "message_ping_2": { "type": "tone", "freq": 1318, "duration": 0.09, "wave": "sine", "volume": 0.30, "decay": 6.0 },
-      "shutter": { "type": "noise", "duration": 0.09, "volume": 0.42, "lowpass": 0.55 },
-      "ui_click": { "type": "tone", "freq": 620, "duration": 0.05, "wave": "square", "volume": 0.18, "decay": 12.0 },
-      "ui_confirm": { "type": "tone", "freq": 784, "duration": 0.12, "wave": "sine", "volume": 0.24, "decay": 5.0 },
-      "ui_cancel": { "type": "tone", "freq": 392, "duration": 0.12, "wave": "sine", "volume": 0.22, "decay": 5.0 },
-      "page": { "type": "noise", "duration": 0.12, "volume": 0.20, "lowpass": 0.2 },
-      "splash": { "type": "noise", "duration": 0.35, "volume": 0.30, "lowpass": 0.35 },
-      "thunder": { "type": "noise", "duration": 1.4, "volume": 0.34, "lowpass": 0.05, "decay": 1.2 },
-      "signal_lost": { "type": "tone", "freq": 220, "duration": 0.35, "wave": "square", "volume": 0.18, "decay": 3.0 }
+      "message_ping": {
+        "type": "tone",
+        "freq": 1046,
+        "duration": 0.09,
+        "wave": "sine",
+        "volume": 0.35,
+        "decay": 6.0
+      },
+      "message_ping_2": {
+        "type": "tone",
+        "freq": 1318,
+        "duration": 0.09,
+        "wave": "sine",
+        "volume": 0.3,
+        "decay": 6.0
+      },
+      "shutter": {
+        "type": "noise",
+        "duration": 0.09,
+        "volume": 0.42,
+        "lowpass": 0.55
+      },
+      "ui_click": {
+        "type": "tone",
+        "freq": 620,
+        "duration": 0.05,
+        "wave": "square",
+        "volume": 0.18,
+        "decay": 12.0
+      },
+      "ui_confirm": {
+        "type": "tone",
+        "freq": 784,
+        "duration": 0.12,
+        "wave": "sine",
+        "volume": 0.24,
+        "decay": 5.0
+      },
+      "ui_cancel": {
+        "type": "tone",
+        "freq": 392,
+        "duration": 0.12,
+        "wave": "sine",
+        "volume": 0.22,
+        "decay": 5.0
+      },
+      "page": {
+        "type": "noise",
+        "duration": 0.12,
+        "volume": 0.2,
+        "lowpass": 0.2
+      },
+      "splash": {
+        "type": "noise",
+        "duration": 0.35,
+        "volume": 0.3,
+        "lowpass": 0.35
+      },
+      "thunder": {
+        "type": "noise",
+        "duration": 1.4,
+        "volume": 0.34,
+        "lowpass": 0.05,
+        "decay": 1.2
+      },
+      "signal_lost": {
+        "type": "tone",
+        "freq": 220,
+        "duration": 0.35,
+        "wave": "square",
+        "volume": 0.18,
+        "decay": 3.0
+      }
     },
     "ambience": {
-      "waves": { "type": "noise_loop", "duration": 4.0, "volume": 0.28, "lowpass": 0.16, "swell_hz": 0.16, "swell_depth": 0.45 },
-      "wind": { "type": "noise_loop", "duration": 4.0, "volume": 0.16, "lowpass": 0.30, "swell_hz": 0.21, "swell_depth": 0.35 },
-      "storm": { "type": "noise_loop", "duration": 3.0, "volume": 0.30, "lowpass": 0.22, "swell_hz": 0.45, "swell_depth": 0.5 },
-      "sea_calm": { "type": "noise_loop", "duration": 5.0, "volume": 0.20, "lowpass": 0.20, "swell_hz": 0.12, "swell_depth": 0.30 }
+      "waves": {
+        "type": "noise_loop",
+        "duration": 4.0,
+        "volume": 0.28,
+        "lowpass": 0.16,
+        "swell_hz": 0.16,
+        "swell_depth": 0.45
+      },
+      "wind": {
+        "type": "noise_loop",
+        "duration": 4.0,
+        "volume": 0.16,
+        "lowpass": 0.3,
+        "swell_hz": 0.21,
+        "swell_depth": 0.35
+      },
+      "storm": {
+        "type": "noise_loop",
+        "duration": 3.0,
+        "volume": 0.3,
+        "lowpass": 0.22,
+        "swell_hz": 0.45,
+        "swell_depth": 0.5
+      },
+      "sea_calm": {
+        "type": "noise_loop",
+        "duration": 5.0,
+        "volume": 0.2,
+        "lowpass": 0.2,
+        "swell_hz": 0.12,
+        "swell_depth": 0.3
+      }
     },
     "music": {
-      "calm_daily": { "file": "music/calm_daily.ogg", "volume": 0.35 },
-      "bright_daily": { "file": "music/bright_daily.ogg", "volume": 0.35 },
-      "travel": { "file": "music/travel.ogg", "volume": 0.35 },
-      "sea_travel": { "file": "music/sea_travel.ogg", "volume": 0.35 },
-      "storm": { "file": "music/storm.ogg", "volume": 0.30 },
-      "unknown_world": { "file": "music/unknown_world.ogg", "volume": 0.35 }
+      "calm_daily": {
+        "file": "music/calm_daily.ogg",
+        "volume": 0.35
+      },
+      "bright_daily": {
+        "file": "music/bright_daily.ogg",
+        "volume": 0.35
+      },
+      "travel": {
+        "file": "music/travel.ogg",
+        "volume": 0.35
+      },
+      "sea_travel": {
+        "file": "music/sea_travel.ogg",
+        "volume": 0.35
+      },
+      "storm": {
+        "file": "music/storm.ogg",
+        "volume": 0.3
+      },
+      "unknown_world": {
+        "file": "music/unknown_world.ogg",
+        "volume": 0.35
+      }
     }
   },
   "ui_text": {
     "menu": [
-      { "id": "start", "label": "开始游戏", "enabled": true },
-      { "id": "continue", "label": "继续", "enabled": false },
-      { "id": "settings", "label": "设置", "enabled": true },
-      { "id": "quit", "label": "退出", "enabled": true }
+      {
+        "id": "start",
+        "label": "开始游戏",
+        "enabled": true
+      },
+      {
+        "id": "continue",
+        "label": "继续",
+        "enabled": false
+      },
+      {
+        "id": "settings",
+        "label": "设置",
+        "enabled": true
+      },
+      {
+        "id": "quit",
+        "label": "退出",
+        "enabled": true
+      }
     ],
     "menu_cursor": "▸",
     "menu_disabled_hint": "本轮未启用",

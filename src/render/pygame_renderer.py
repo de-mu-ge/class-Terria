@@ -206,23 +206,35 @@ class PygameRenderer(Renderer):
     def draw_line(self, start, end, color: Color, width: int = 1, alpha: int = 255) -> None:
         if alpha <= 0:
             return
+        w = max(1, int(width))
+        x0, y0 = int(round(start[0])), int(round(start[1]))
+        x1, y1 = int(round(end[0])), int(round(end[1]))
         if alpha < 255:
-            layer = pygame.Surface(self._canvas.get_size(), pygame.SRCALPHA)
+            # 只为线段包围盒分配表面：粒子（雨丝）每帧几十上百条，不能一条一个整屏
+            pad = w + 2
+            left = min(x0, x1) - pad
+            top = min(y0, y1) - pad
+            size = (abs(x1 - x0) + pad * 2 + 1, abs(y1 - y0) + pad * 2 + 1)
+            layer = pygame.Surface(size, pygame.SRCALPHA)
             pygame.draw.line(layer, (*parse_color(color), int(alpha)),
-                             (int(start[0]), int(start[1])), (int(end[0]), int(end[1])), max(1, int(width)))
-            self._canvas.blit(layer, (0, 0))
+                             (x0 - left, y0 - top), (x1 - left, y1 - top), w)
+            self._canvas.blit(layer, (left, top))
             return
-        pygame.draw.line(self._canvas, parse_color(color),
-                         (int(start[0]), int(start[1])), (int(end[0]), int(end[1])), max(1, int(width)))
+        pygame.draw.line(self._canvas, parse_color(color), (x0, y0), (x1, y1), w)
 
     def draw_polygon(self, points: Sequence[tuple[float, float]], color: Color, alpha: int = 255) -> None:
         if len(points) < 3 or alpha <= 0:
             return
         pts = [(int(round(x)), int(round(y))) for x, y in points]
         if alpha < 255:
-            layer = pygame.Surface(self._canvas.get_size(), pygame.SRCALPHA)
-            pygame.draw.polygon(layer, (*parse_color(color), int(alpha)), pts)
-            self._canvas.blit(layer, (0, 0))
+            xs = [p[0] for p in pts]
+            ys = [p[1] for p in pts]
+            left, top = min(xs) - 2, min(ys) - 2
+            size = (max(xs) - left + 3, max(ys) - top + 3)
+            layer = pygame.Surface(size, pygame.SRCALPHA)
+            pygame.draw.polygon(layer, (*parse_color(color), int(alpha)),
+                                [(x - left, y - top) for x, y in pts])
+            self._canvas.blit(layer, (left, top))
             return
         pygame.draw.polygon(self._canvas, parse_color(color), pts)
 

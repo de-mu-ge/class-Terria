@@ -1,6 +1,6 @@
 """推送前安全检查：扫描已跟踪文件里的密钥 / 预签名 URL 痕迹。
 
-背景：视觉生图脚本曾把带 `X-Tos-Credential=AKLT...` 的预签名 URL 写进 manifest.json，
+背景：视觉生图脚本曾把带凭证参数的预签名 URL 写进 manifest.json，
 被 GitHub push protection 拦下。本脚本用于在推送前自查。
 
 用法：
@@ -20,10 +20,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# 只匹配“凭证痕迹”，不匹配正常文本
+# 只匹配“凭证痕迹”，不匹配正常文本。
+# 预签名参数名拼成两段，避免本文件自己被自己的规则命中。
+_SIGNED_QUERY = "X-Tos-" + "Credential"
+
 PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("火山方舟 AK ID", re.compile(r"AKLT[A-Za-z0-9]{8,}")),
-    ("预签名 URL 凭证", re.compile(r"X-Tos-Credential")),
+    ("预签名 URL 凭证", re.compile(re.escape(_SIGNED_QUERY))),
     ("AWS Access Key", re.compile(r"AKIA[0-9A-Z]{16}")),
     ("GitHub Token", re.compile(r"gh[pousr]_[A-Za-z0-9]{20,}")),
     ("Bearer 头", re.compile(r"Bearer\s+[A-Za-z0-9\-_\.]{20,}")),
