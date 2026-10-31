@@ -1,0 +1,37 @@
+CC0 1.0 Universal (Public Domain Dedication)
+============================================
+
+素材名称  MV Platformer Male (32x64)
+作者      MoikMellah
+来源      https://opengameart.org/content/mv-platformer-male-32x64
+下载日期  2026-10-31
+原始文件  maleBase_0.zip（349 KB，解压于本目录）
+授权      CC0 1.0 —— 作者在页面评论中确认：可自由用于任何用途，无需署名。
+
+许可全文  https://creativecommons.org/publicdomain/zero/1.0/
+
+本项目用途
+----------
+玩家角色占位素材（序章玩法演示阶段）。正式角色定稿后替换。
+
+帧位对照（整张 320×640，10 列 × 10 行，每格 32×64）
+---------------------------------------------------
+待机   0-0
+行走   1-0 … 1-4（5 帧）
+跳跃   1-7 … 1-9（3 帧）
+蹲伏   1-5、1-6
+攻击   2-x … 4-x
+
+目录结构
+--------
+maleBase/
+  base/     三个体型底图（light / dark / undead）
+  outfit/   护甲与忍者服
+  head/     发型与头盔
+  full/     合成好的整张表（本项目使用 advnt_full.png）
+  frameGuide.png  帧格参考
+
+使用说明
+--------
+本目录下的 PNG 不得直接改写。需要新组合时，用 base + outfit + head 叠加，
+再另存到项目自己的 assets 目录，并在此文件登记改动。

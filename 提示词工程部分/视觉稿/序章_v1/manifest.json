@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-10-31T13:07:17",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "records": [
+    {
+      "name": "00_style_keyart",
+      "prompt": "2D 像素艺术与厚涂混合风格的游戏主视觉：一名披厚重大衣的女孩背对镜头，举着火把在倾斜雪坡上向右上方缓慢前进；斜向右下的强烈暴雪，风吹动大衣、围巾与长发；火把暖橙色光照与周围冷蓝色雪地形成强对比；远处是层叠的雪山、针叶林、遗迹剪影，层次分明；人物在广阔环境中显得渺小；低饱和冷色调，环境占据主要视觉面积；电影感构图，宽银幕；画面内不出现任何文字、logo、水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 像素艺术与厚涂混合风格的游戏主视觉：一名披厚重大衣的女孩背对镜头，举着火把在倾斜雪坡上向右上方缓慢前进；斜向右下的强烈暴雪，风吹动大衣、围巾与长发；火把暖橙色光照与周围冷蓝色雪地形成强对比；远处是层叠的雪山、针叶林、遗迹剪影，层次分明；人物在广阔环境中显得渺小；低饱和冷色调，环境占据主要视觉面积；电影感构图，宽银幕；画面内不出现任何文字、logo、水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T12:59:30",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/d9c0aea41f95a249a63b5b32189122281c6e1e861177224397120/Image/2127558110/021793422771168e1e6c18222198123b5b36a942a59f14aea0c9d.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\00_style_keyart.jpg",
+      "bytes": 382491,
+      "seconds": 61.2
+    },
+    {
+      "name": "01_ui_title",
+      "prompt": "2D 像素艺术风格的游戏开始界面背景：阴沉海岸，右侧远处是层叠山脉与森林剪影，海面有细密波浪与白色浪线，天空压着厚重云层，云缝透出微弱冷光；画面左侧留出大面积干净空白用于放置标题；低饱和冷蓝色调，环境光偏暗；固定侧面视角，16-bit 像素质感，块面清晰；无人物，画面内不出现任何文字、logo、水印、按钮",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 像素艺术风格的游戏开始界面背景：阴沉海岸，右侧远处是层叠山脉与森林剪影，海面有细密波浪与白色浪线，天空压着厚重云层，云缝透出微弱冷光；画面左侧留出大面积干净空白用于放置标题；低饱和冷蓝色调，环境光偏暗；固定侧面视角，16-bit 像素质感，块面清晰；无人物，画面内不出现任何文字、logo、水印、按钮",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:00:31",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/c7566a77bc144cbd4250e0766873c506f31ee9634238224397120/Image/2127558110/0217934228324369ee13f605c3786670e0524dbc441cb77a6657c.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\01_ui_title.jpg",
+      "bytes": 259089,
+      "seconds": 51.2
+    },
+    {
+      "name": "02_scene01_plaza",
+      "prompt": "2D 日式动画背景风格：日本城市公共广场，春季上午，天气晴朗；周围有盛开的樱花树，浅粉色花瓣在空中飘落；干净的石砖地面散落少量花瓣；远处可见城市建筑、道路与行人剪影；柔和阳光，空气清透；整体色彩以粉色、浅蓝色与米白色为主，明亮温暖；画面中没有主要人物，中央留出人物站位空间；无文字，无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 日式动画背景风格：日本城市公共广场，春季上午，天气晴朗；周围有盛开的樱花树，浅粉色花瓣在空中飘落；干净的石砖地面散落少量花瓣；远处可见城市建筑、道路与行人剪影；柔和阳光，空气清透；整体色彩以粉色、浅蓝色与米白色为主，明亮温暖；画面中没有主要人物，中央留出人物站位空间；无文字，无水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:01:23",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/7ae0f68a5b74380732f2c24223300d8f185205346388224397120/Image/2127558110/021793422883643502581f8d00332242c2f23708347b5a86f0ea7.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\02_scene01_plaza.jpg",
+      "bytes": 565477,
+      "seconds": 48.9
+    },
+    {
+      "name": "03_scene03_port",
+      "prompt": "2D 日式动画背景风格：日本某国际客运港口，上午，天气晴朗；大型白色客轮停靠在码头，远处是海面、其他船只与港口设施；港区建筑整洁明亮，有行李车与旅客剪影；海风感，浅蓝与米白色调，阳光充足；宽幅构图，无主要人物；无文字，无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 日式动画背景风格：日本某国际客运港口，上午，天气晴朗；大型白色客轮停靠在码头，远处是海面、其他船只与港口设施；港区建筑整洁明亮，有行李车与旅客剪影；海风感，浅蓝与米白色调，阳光充足；宽幅构图，无主要人物；无文字，无水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:02:11",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/5d6142f673aec67663061e6c3ea854e0817907535239224397120/Image/2127558110/0217934229325357097180e458ae3c6e16036676cea376f2416d5.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\03_scene03_port.jpg",
+      "bytes": 588794,
+      "seconds": 67.5
+    },
+    {
+      "name": "04_scene04_deck",
+      "prompt": "2D 日式动画背景风格：大型客运轮船的开放甲板，下午；海面呈深蓝与浅蓝层次，阳光在波浪上碎成细小的金色反光，远处是清晰的海平线；甲板白色栏杆，海风轻柔；温暖明亮的旅行氛围；构图留出人物站位空间，无人物；无文字，无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 日式动画背景风格：大型客运轮船的开放甲板，下午；海面呈深蓝与浅蓝层次，阳光在波浪上碎成细小的金色反光，远处是清晰的海平线；甲板白色栏杆，海风轻柔；温暖明亮的旅行氛围；构图留出人物站位空间，无人物；无文字，无水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:03:19",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/84e7d2ee72ac4d98b36402948a26f4af6fdbcc720000324397120/Image/2127558110/021793423000027ccbdf6fa4f62a84920463b89d4ca27ee2d7e48.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\04_scene04_deck.jpg",
+      "bytes": 481251,
+      "seconds": 58.2
+    },
+    {
+      "name": "05_scene05_storm",
+      "prompt": "2D 日式动画背景风格：客轮甲板与海面，天气急剧转坏；厚重灰黑色云层压顶，云层快速翻涌；海面明显起伏，白色浪花被风撕碎；远处海平线被灰色雾气吞没；光线迅速变暗，冷灰色调，紧张但克制，不出现恐怖元素；无人物，无文字，无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 日式动画背景风格：客轮甲板与海面，天气急剧转坏；厚重灰黑色云层压顶，云层快速翻涌；海面明显起伏，白色浪花被风撕碎；远处海平线被灰色雾气吞没；光线迅速变暗，冷灰色调，紧张但克制，不出现恐怖元素；无人物，无文字，无水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:04:17",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/d17462ea866de8df867177ad03a75d4ed70d7d622850324397120/Image/2127558110/021793423058226d7d07de4d57a30da771768fd8ed668ae26471d.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\05_scene05_storm.jpg",
+      "bytes": 392890,
+      "seconds": 61.5
+    },
+    {
+      "name": "06_scene06_island",
+      "prompt": "2D 动画背景风格，宏大远景：浓雾深处逐渐浮现一座未知岛屿，远处高耸山峰被云雾半遮，低处是深色森林轮廓；天空出现不符合现实天气特征的彩色光带，缓慢流动；海面深色，波浪剧烈；岛屿壮丽而具有吸引力，不是邪恶或敌意的氛围；傍晚微光，冷色调中带奇异光晕；宽银幕构图；无文字，无地图标注，无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 动画背景风格，宏大远景：浓雾深处逐渐浮现一座未知岛屿，远处高耸山峰被云雾半遮，低处是深色森林轮廓；天空出现不符合现实天气特征的彩色光带，缓慢流动；海面深色，波浪剧烈；岛屿壮丽而具有吸引力，不是邪恶或敌意的氛围；傍晚微光，冷色调中带奇异光晕；宽银幕构图；无文字，无地图标注，无水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:05:19",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/50b0f4bac82bdddd789e112dba1a199d7e7740676911324397120/Image/2127558110/0217934231196760477e7d991a1abd211e987ddddb28cab4f0b05.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\06_scene06_island.jpg",
+      "bytes": 231465,
+      "seconds": 63.3
+    },
+    {
+      "name": "07_scene07_coast",
+      "prompt": "2D 像素艺术，固定侧面视角的实际游戏画面：阴沉寒冷的海岸，沙滩、少量岩石与低矮海岸植被；远处可见森林、山脉与高地轮廓；海面有明显波浪；画面中央偏左有一名倒地的女孩像素精灵，背着自己的吉他包，身边散落少量漂流物；低饱和冷色调，环境占据主要视觉面积；16-bit 像素质感，块面与光影层次清晰，像可玩的游戏画面而不是插画；无 UI 覆盖层，无文字，无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 像素艺术，固定侧面视角的实际游戏画面：阴沉寒冷的海岸，沙滩、少量岩石与低矮海岸植被；远处可见森林、山脉与高地轮廓；海面有明显波浪；画面中央偏左有一名倒地的女孩像素精灵，背着自己的吉他包，身边散落少量漂流物；低饱和冷色调，环境占据主要视觉面积；16-bit 像素质感，块面与光影层次清晰，像可玩的游戏画面而不是插画；无 UI 覆盖层，无文字，无水印",
+        "response_format": "url",
+        "size": "2K",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:06:22",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/427316b2101b18345132eb5dbbd9202525bc9e789281324397120/Image/2127558110/021793423182987e9cb5252029dbbd5be23154381b1012b613724.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1\\07_scene07_coast.jpg",
+      "bytes": 285675,
+      "seconds": 55.2
+    }
+  ]
+}

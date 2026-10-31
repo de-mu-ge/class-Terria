@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "title": "直到再次相遇",
+    "subtitle": "序章",
+    "version": "0.1.0",
+    "engine": "pygame-ce",
+    "logical_resolution": "960x540"
+  },
+  "display": {
+    "logical_width": 960,
+    "logical_height": 540,
+    "window_scale": 2,
+    "fps": 60,
+    "fixed_timestep": 0.0166666667,
+    "max_frame_time": 0.1,
+    "max_update_steps": 6,
+    "caption": "直到再次相遇 · 序章",
+    "allow_fullscreen": false
+  },
+  "paths": {
+    "assets_root": "assets",
+    "data_root": "data",
+    "backgrounds": "assets/backgrounds/prologue",
+    "paper_dolls": "assets/characters/paper_dolls",
+    "sprites": "assets/characters/sprites",
+    "ui": "assets/ui",
+    "audio": "assets/audio",
+    "fonts": "assets/fonts"
+  },
+  "palette": {
+    "void": "#101822",
+    "dark": "#1B2433",
+    "mid": "#26364A",
+    "cold": "#3E5A7A",
+    "cold_white": "#A9BCCF",
+    "snow": "#D3DEE9",
+    "warm_core": "#FFD9A0",
+    "warm_mid": "#F2A65A",
+    "warm_edge": "#E4712F",
+    "sakura": "#F4C7D2",
+    "sakura_deep": "#E8A0B4",
+    "cream": "#F2EDE3",
+    "sky": "#BBD6EA",
+    "dialog_bg": "#0B1219",
+    "dialog_border": "#C9A227",
+    "text": "#EDEFF2",
+    "text_dim": "#A8B4C2",
+    "text_empty": "#6E7A88",
+    "danger": "#C2453D",
+    "white": "#FFFFFF",
+    "black": "#000000",
+    "chat_frame": "#0E1620",
+    "chat_header": "#1A2432",
+    "chat_bubble": "#22303F",
+    "chat_bubble_own": "#3E5A7A",
+    "chat_bubble_text": "#E6ECF2",
+    "panel_bg": "#0B1219",
+    "panel_border": "#C9A227",
+    "hud_life": "#C2453D",
+    "hud_temp": "#A9BCCF",
+    "hud_frame": "#C9A227",
+    "hud_slot": "#111A24",
+    "weather_overcast": "#22303F",
+    "signal_ok": "#A9BCCF",
+    "signal_lost": "#C2453D"
+  },
+  "alpha": {
+    "dialog_bg": 0.82,
+    "panel_bg": 0.86,
+    "chat_bubble": 0.92,
+    "subtitle_bg": 0.78,
+    "hint_bg": 0.72,
+    "task_bg": 0.80,
+    "menu_dim": 0.62
+  },
+  "fonts": {
+    "candidates": {
+      "galgame": [
+        "assets/fonts/SourceHanSansSC-Regular.otf",
+        "assets/fonts/NotoSansSC-Regular.otf",
+        "C:/Windows/Fonts/msyh.ttc",
+        "C:/Windows/Fonts/Deng.ttf",
+        "C:/Windows/Fonts/simhei.ttf"
+      ],
+      "pixel": [
+        "assets/fonts/zpix.ttf",
+        "assets/fonts/Zpix.ttf",
+        "assets/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf",
+        "C:/Windows/Fonts/simsun.ttc",
+        "C:/Windows/Fonts/simhei.ttf",
+        "C:/Windows/Fonts/msyh.ttc"
+      ]
+    },
+    "roles": {
+      "dialogue": { "family": "galgame", "size": 18 },
+      "name": { "family": "galgame", "size": 18 },
+      "subtitle": { "family": "galgame", "size": 16 },
+      "broadcast_label": { "family": "galgame", "size": 12 },
+      "chat": { "family": "galgame", "size": 14 },
+      "chat_name": { "family": "galgame", "size": 12 },
+      "chat_header": { "family": "galgame", "size": 14 },
+      "menu": { "family": "pixel", "size": 20 },
+      "menu_small": { "family": "pixel", "size": 14 },
+      "title": { "family": "pixel", "size": 44 },
+      "title_sub": { "family": "pixel", "size": 18 },
+      "version": { "family": "pixel", "size": 12 },
+      "hud": { "family": "pixel", "size": 12 },
+      "hud_big": { "family": "pixel", "size": 16 },
+      "task_title": { "family": "pixel", "size": 16 },
+      "task": { "family": "pixel", "size": 14 },
+      "hint": { "family": "pixel", "size": 14 },
+      "confirm": { "family": "pixel", "size": 16 },
+      "photo": { "family": "pixel", "size": 14 },
+      "debug": { "family": "pixel", "size": 12 }
+    },
+    "line_height": {
+      "dialogue": 27,
+      "subtitle": 22,
+      "task": 22,
+      "hint": 20
+    }
+  },
+  "dialogue": {
+    "panel": [36, 393, 888, 123],
+    "name_bar": [36, 363, 180, 39],
+    "padding": { "left": 18, "right": 18, "top": 15, "bottom": 15 },
+    "border_outer": 2,
+    "border_inner": 1,
+    "chars_per_second": 40,
+    "indicator_blink_hz": 1.5,
+    "portrait_dim_alpha": 176,
+    "portrait_idle_alpha": 255,
+    "name_padding": 12,
+    "auto_advance_padding": 0.25
+  },
+  "transitions": {
+    "fade_in": 0.6,
+    "fade_out": 0.5,
+    "flash": 0.15,
+    "scene": 0.4
+  },
+  "camera": {
+    "presets": {
+      "hold": { "zoom_mul": 1.0, "duration": 0.0 },
+      "push_in": { "zoom_mul": 1.15, "duration": 0.8, "ease": "out" },
+      "pull_out": { "zoom_mul": 0.87, "duration": 0.8, "ease": "out" },
+      "zoom_out_far": { "zoom_mul": 0.8, "duration": 2.0, "ease": "out" }
+    },
+    "min_zoom": 1.0,
+    "max_zoom": 2.6
+  },
+  "stage": {
+    "doll_base_height": 450,
+    "doll_width_ratio": 0.6667,
+    "doll_clip_y": 393,
+    "shake_default": { "amplitude": 2.5, "frequency": 0.5 },
+    "pixel_sprite_scale": 2,
+    "pixel_sprite_ground_y": 430,
+    "pipeline_galgame": "galgame",
+    "pipeline_pixel": "pixel"
+  },
+  "hud": {
+    "life_bar": [24, 20, 288, 18],
+    "temp_bar": [24, 46, 288, 18],
+    "bar_label_width": 0,
+    "hotbar": { "slots": 8, "slot_size": 96, "y": 432, "gap": 2, "selected_lift": 2, "filled": 1 }
+  },
+  "chat": {
+    "frame": [300, 44, 360, 452],
+    "header_height": 44,
+    "bubble_padding": 10,
+    "bubble_radius": 8,
+    "bubble_max_width": 250,
+    "line_height": 20,
+    "message_gap": 8,
+    "start_y": 64
+  },
+  "subtitle": {
+    "bar": [132, 396, 696, 64],
+    "padding": 14,
+    "label": "船上广播"
+  },
+  "photo": {
+    "frame": [250, 62, 460, 416],
+    "border": 14,
+    "inner": [16, 16, 428, 340],
+    "caption_y": 372,
+    "doll_scale": 0.55,
+    "dim_alpha": 0.45
+  },
+  "task": {
+    "panel": [612, 64, 312, 148],
+    "padding": 14,
+    "title_line_height": 26,
+    "line_height": 22
+  },
+  "hint": {
+    "panel": [236, 120, 368, 112],
+    "line_height": 20
+  },
+  "signal": {
+    "position": [872, 16],
+    "size": [64, 36],
+    "bars": 4,
+    "bar_width": 4,
+    "bar_gap": 2,
+    "bar_height_unit": 4,
+    "label": "信号"
+  },
+  "title_screen": {
+    "background": "s07_coast.png",
+    "menu_origin": [72, 306],
+    "menu_line_spacing": 24,
+    "title_origin": [72, 176],
+    "title_sub_origin": [76, 232],
+    "title_underline_width": 260,
+    "underline_gap": 30,
+    "vignette": { "top": 120, "bottom": 120, "left": 200, "right": 200 },
+    "vignette_strength": 0.55,
+    "dim_alpha": 0.35,
+    "version_margin": [18, 16]
+  },
+  "survival": {
+    "panel": [64, 84, 492, 148],
+    "line_height": 20,
+    "title_offset": 14,
+    "body_offset": 50,
+    "hint_offset": 82
+  },
+  "settings": {
+    "panel": [240, 150, 480, 240],
+    "slider": [60, 96, 360, 10],
+    "line_height": 24
+  },
+  "audio": {
+    "enabled": true,
+    "master_volume": 0.7,
+    "sfx": {
+      "message_ping": { "type": "tone", "freq": 1046, "duration": 0.09, "wave": "sine", "volume": 0.35, "decay": 6.0 },
+      "message_ping_2": { "type": "tone", "freq": 1318, "duration": 0.09, "wave": "sine", "volume": 0.30, "decay": 6.0 },
+      "shutter": { "type": "noise", "duration": 0.09, "volume": 0.42, "lowpass": 0.55 },
+      "ui_click": { "type": "tone", "freq": 620, "duration": 0.05, "wave": "square", "volume": 0.18, "decay": 12.0 },
+      "ui_confirm": { "type": "tone", "freq": 784, "duration": 0.12, "wave": "sine", "volume": 0.24, "decay": 5.0 },
+      "ui_cancel": { "type": "tone", "freq": 392, "duration": 0.12, "wave": "sine", "volume": 0.22, "decay": 5.0 },
+      "page": { "type": "noise", "duration": 0.12, "volume": 0.20, "lowpass": 0.2 },
+      "splash": { "type": "noise", "duration": 0.35, "volume": 0.30, "lowpass": 0.35 },
+      "thunder": { "type": "noise", "duration": 1.4, "volume": 0.34, "lowpass": 0.05, "decay": 1.2 },
+      "signal_lost": { "type": "tone", "freq": 220, "duration": 0.35, "wave": "square", "volume": 0.18, "decay": 3.0 }
+    },
+    "ambience": {
+      "waves": { "type": "noise_loop", "duration": 4.0, "volume": 0.28, "lowpass": 0.16, "swell_hz": 0.16, "swell_depth": 0.45 },
+      "wind": { "type": "noise_loop", "duration": 4.0, "volume": 0.16, "lowpass": 0.30, "swell_hz": 0.21, "swell_depth": 0.35 },
+      "storm": { "type": "noise_loop", "duration": 3.0, "volume": 0.30, "lowpass": 0.22, "swell_hz": 0.45, "swell_depth": 0.5 },
+      "sea_calm": { "type": "noise_loop", "duration": 5.0, "volume": 0.20, "lowpass": 0.20, "swell_hz": 0.12, "swell_depth": 0.30 }
+    },
+    "music": {
+      "calm_daily": { "file": "music/calm_daily.ogg", "volume": 0.35 },
+      "bright_daily": { "file": "music/bright_daily.ogg", "volume": 0.35 },
+      "travel": { "file": "music/travel.ogg", "volume": 0.35 },
+      "sea_travel": { "file": "music/sea_travel.ogg", "volume": 0.35 },
+      "storm": { "file": "music/storm.ogg", "volume": 0.30 },
+      "unknown_world": { "file": "music/unknown_world.ogg", "volume": 0.35 }
+    }
+  },
+  "ui_text": {
+    "menu": [
+      { "id": "start", "label": "开始游戏", "enabled": true },
+      { "id": "continue", "label": "继续", "enabled": false },
+      { "id": "settings", "label": "设置", "enabled": true },
+      { "id": "quit", "label": "退出", "enabled": true }
+    ],
+    "menu_cursor": "▸",
+    "menu_disabled_hint": "本轮未启用",
+    "version_prefix": "v",
+    "settings_title": "设置",
+    "settings_volume": "音量",
+    "settings_hint": "← → 调整　Esc 返回",
+    "confirm_title": "返回开始界面？",
+    "confirm_body": "当前进度不会保存。",
+    "confirm_yes": "是",
+    "confirm_no": "否",
+    "dialogue_hint": "空格 / 回车 / 左键 继续　按住 Ctrl 快进　Esc 菜单",
+    "continue_hint": "点击继续",
+    "skip_hint": "快进中",
+    "hint_title": "操作提示",
+    "hint_lines": [
+      "← → / A D　移动",
+      "空格　跳跃",
+      "E　互动",
+      "Esc　菜单"
+    ],
+    "hotbar_label": "快捷栏",
+    "life_label": "生命",
+    "temp_label": "体温",
+    "signal_ok": "在线",
+    "signal_weak": "信号弱",
+    "signal_lost": "无信号",
+    "survival_title": "生存模式",
+    "survival_body": "序章结束。生存玩法将在下一轮实现。",
+    "survival_hint": [
+      "← → / A D　移动（验证操作权已交接）",
+      "Esc　返回开始界面"
+    ],
+    "placeholder_tag": "占位"
+  }
+}

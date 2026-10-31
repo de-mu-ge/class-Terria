@@ -1,0 +1,5 @@
+# 运行依赖（Conda 环境 game，Python 3.10）
+# 安装：conda activate game && pip install -r requirements.txt
+
+pygame-ce>=2.5.0
+Pillow>=10.0.0

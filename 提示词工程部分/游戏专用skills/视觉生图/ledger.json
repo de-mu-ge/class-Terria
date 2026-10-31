@@ -1,0 +1,31 @@
+{
+  "used": 11,
+  "quota": 118,
+  "runs": [
+    {
+      "time": "2026-10-31T13:07:17",
+      "count": 8,
+      "names": [
+        "00_style_keyart",
+        "01_ui_title",
+        "02_scene01_plaza",
+        "03_scene03_port",
+        "04_scene04_deck",
+        "05_scene05_storm",
+        "06_scene06_island",
+        "07_scene07_coast"
+      ],
+      "outdir": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v1"
+    },
+    {
+      "time": "2026-10-31T13:15:50",
+      "count": 3,
+      "names": [
+        "p1_coast_wakeup",
+        "p2_forest_edge",
+        "p3_storm_transit"
+      ],
+      "outdir": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v2\\model"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "blocks": {
+    "s01_open": {
+      "scene": "s01",
+      "lines": [
+        {
+          "speaker": "anon",
+          "portrait": "anon_sleepy",
+          "emotion": "困倦、无奈",
+          "text": "「好困啊……爽世（Soyo）究竟怎么想的啊，为什么一定要去英国演出啊！」",
+          "action": "爱音轻轻揉一下眼睛，随后看向手机。",
+          "camera": "push_in",
+          "sfx": null,
+          "wait": 0.0
+        },
+        {
+          "speaker": "anon",
+          "portrait": "anon_worried",
+          "emotion": "稍微皱眉",
+          "text": "「英国啊……光是想到要去那么远的地方，就觉得有点麻烦。」",
+          "action": "只对长途行程表现出一点排斥，不是讨厌英国。",
+          "camera": null,
+          "sfx": null,
+          "wait": 0.0
+        }
+      ]
+    },
+    "s01_after_chat": {
+      "scene": "s01",
+      "lines": [
+        {
+          "speaker": "anon",
+          "portrait": "anon_surprised",
+          "emotion": "惊讶",
+          "text": "「诶？立希已经到了？」",
+          "action": "看到手机群聊后抬头。",
+          "camera": null,
+          "sfx": null,
+          "wait": 0.0
+        },
+        {
+          "speaker": "anon",
+          "portrait": "anon_pout",
+          "emotion": "有些不满，但不是生气",
+          "text": "「真是的，我明明已经很努力地赶过来了！」",
+          "action": "收起手机，调整背后的吉他包。",
+          "camera": null,
+          "sfx": null,
+          "wait": 0.0
+        }
+      ]
+    },
+    "s02_arrive": {
+      "scene": "s02",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_smile", "emotion": "开朗", "text": "「大家早上好！」", "action": "爱音抬起右手，向大家挥手。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_impatient", "emotion": "略显不耐烦", "text": "「太慢了。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_surprised", "emotion": "惊讶", "text": "「诶？我明明没有迟到吧！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_annoyed", "emotion": "认真", "text": "「我们说好提前十分钟集合。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_pout", "emotion": "不服气", "text": "「那不就是提前集合嘛！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_smile_soft", "emotion": "温和微笑", "text": "「好了，立希。爱音也已经到了，不用这么着急。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_happy", "emotion": "得意", "text": "「看吧！还是爽世好！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_deadpan", "emotion": "轻微无语", "text": "「……」", "action": "立希表现出轻微无语，不继续争论。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s02_tomori": {
+      "scene": "s02",
+      "lines": [
+        { "speaker": "tomori", "portrait": "tomori_gentle", "emotion": "安静", "text": "「爱音……吉他带来了呢。」", "action": "灯的视线从樱花转向爱音背后的吉他包，稍微抬起头。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_proud", "emotion": "自信", "text": "「当然啦！这次可是海外演出，我怎么可能忘记！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_normal", "emotion": "轻声", "text": "「英国……」", "action": "停顿。", "camera": null, "sfx": null, "wait": 0.0, "pause": 1.0 },
+        { "speaker": "tomori", "portrait": "tomori_wonder", "emotion": "出神", "text": "「不知道那边的天空，是什么样子的呢……」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_curious", "emotion": "好奇", "text": "「诶？灯灯在想英国的天空吗？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_gentle", "emotion": "含蓄", "text": "「嗯……没见过的地方，一定有没见过的天空吧。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_gentle", "emotion": "温和", "text": "「应该会很漂亮的。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s02_rana": {
+      "scene": "s02",
+      "lines": [
+        { "speaker": "rana", "portrait": "rana_eating", "emotion": "吃着甜点", "text": "「抹茶。」", "action": "乐奈坐在长椅上，手里拿着甜点，突然抬起头。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_curious", "emotion": "疑惑", "text": "「诶？乐奈，你在说什么？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "rana", "portrait": "rana_curious", "emotion": "认真发问", "text": "「英国有抹茶巴菲吗？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_surprised", "emotion": "吃惊", "text": "「等等！你该不会一直在担心这个吧！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_deadpan", "emotion": "无奈", "text": "「……真是的。」", "action": "乐奈说完后继续吃自己的甜点。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s02_depart": {
+      "scene": "s02",
+      "lines": [
+        { "speaker": "soyo", "portrait": "soyo_normal", "emotion": "平稳", "text": "「好了，大家都检查一下自己的东西吧。」", "action": "爽世收起手机，环顾其他成员。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_gentle", "emotion": "确认", "text": "「爱音，护照、演出服和吉他都带齐了吗？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_proud", "emotion": "自信", "text": "「当然！我可是很可靠的！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_deadpan", "emotion": "不太相信", "text": "「希望如此。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_pout", "emotion": "抗议", "text": "「立希！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s03_port": {
+      "scene": "s03",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_curious", "emotion": "随口说起", "text": "「说起来，这次的演出还真是突然呢。」", "action": "爱音观察远处的客轮。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_normal", "emotion": "说明", "text": "「嗯，之前收到了英国那边一个独立音乐节的邀请。」", "action": "爽世拿着手机，正在查看演出相关信息。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_proud", "emotion": "佩服", "text": "「而且爽世还真的把演出安排下来了！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_gentle", "emotion": "温和", "text": "「毕竟是难得的机会嘛。我也和组织方确认过了，演出安排已经确定。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_normal", "emotion": "认真", "text": "「既然已经决定了，就好好准备演出。」", "action": "立希检查自己的行李。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_smile", "emotion": "有干劲", "text": "「知道啦！我当然会认真对待的！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_gentle", "emotion": "感慨", "text": "「大家……要一起去英国演出了呢。」", "action": "灯观察港口的海面。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_smile_soft", "emotion": "应和", "text": "「是啊。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "rana", "portrait": "rana_normal", "emotion": "简短", "text": "「英国。」", "action": "乐奈注意到港口附近的食物售卖点。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s04_deck_a": {
+      "scene": "s04",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_happy", "emotion": "兴奋", "text": "「哇！海真的好大啊！」", "action": "爱音在甲板中央偏左，面向大海，拿手机拍照。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_deadpan", "emotion": "平淡", "text": "「这不是当然的吗……」", "action": "立希站在爱音附近，观察周围。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_pout", "emotion": "不满", "text": "「立希！你就不能稍微表现得兴奋一点吗？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_normal", "emotion": "不以为意", "text": "「有什么好兴奋的。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_smile_soft", "emotion": "轻笑", "text": "「呵呵，难得出来一次，大家就好好享受吧。」", "action": "爽世在两人旁边，观察海面。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_normal", "emotion": "安静", "text": "「看不到陆地呢……」", "action": "灯靠近栏杆但保持安全距离，观察海面。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_gentle", "emotion": "轻声", "text": "「海的另一边，也有很多人在生活吧。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_smile", "emotion": "开朗", "text": "「当然啦！我们马上也要到那里去了！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "rana", "portrait": "rana_normal", "emotion": "短促", "text": "「鱼。」", "action": "乐奈在甲板另一侧，观察海面和周围事物。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s04_deck_b": {
+      "scene": "s04",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_surprised", "emotion": "着急", "text": "「诶？在哪里？！」", "action": "镜头切回甲板。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "rana", "portrait": "rana_curious", "emotion": "指着海面", "text": "「那里。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s04_photo_a": {
+      "scene": "s04",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_happy", "emotion": "兴致很高", "text": "「来来来，大家一起拍一张！」", "action": "爱音拿起手机，举起，调整拍摄角度。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_impatient", "emotion": "疑惑", "text": "「……为什么突然要拍照？」", "action": "立希注意到爱音正在拍照。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_proud", "emotion": "理直气壮", "text": "「当然是为了记录我们第一次海外演出旅行啊！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_smile_soft", "emotion": "同意", "text": "「呵呵，也好，大家一起拍吧。」", "action": "爽世和灯站在一起。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_gentle", "emotion": "轻声", "text": "「一起……」", "action": "灯靠近手机方向。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "rana", "portrait": "rana_normal", "emotion": "简短", "text": "「可以。」", "action": "乐奈站在队伍边缘。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s04_photo_b": {
+      "scene": "s04",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_happy", "emotion": "倒数", "text": "「三、二、一！」", "action": "爱音负责举手机拍照；立希表情略显不自然，但没有拒绝。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s04_photo_c": {
+      "scene": "s04",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_smile", "emotion": "满意", "text": "「嘿嘿！拍得不错嘛！」", "action": "爽世微笑；灯靠近手机观察照片；立希没有说话，但没有离开。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s05_weather": {
+      "scene": "s05",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_surprised", "emotion": "意外", "text": "「诶？天气怎么突然变差了？」", "action": "爱音停止拍照，抬头观察天空。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_worried", "emotion": "回想", "text": "「刚才好像还很晴朗呢……」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_worried", "emotion": "果断", "text": "「先回船舱吧，外面风越来越大了。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_uneasy", "emotion": "不安", "text": "「海……好像变得不一样了。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s05_cabin": {
+      "scene": "s05",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_surprised", "emotion": "吃惊", "text": "「哇！刚才是不是晃了一下？」", "action": "五个人刚进入船舱，客轮发生一次明显晃动。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_annoyed", "emotion": "紧张", "text": "「抓好扶手！」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "soyo", "portrait": "soyo_serious", "emotion": "镇定", "text": "「大家先不要慌张。」", "action": "爽世确认所有成员都在。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s05_comms": {
+      "scene": "s05",
+      "lines": [
+        { "speaker": "soyo", "portrait": "soyo_surprised", "emotion": "疑惑", "text": "「奇怪……没有信号。」", "action": "爽世拿出手机查看信号。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "taki", "portrait": "taki_worried", "emotion": "警觉", "text": "「船上的通讯也出问题了吗？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_uneasy", "emotion": "不安", "text": "「这到底是怎么回事啊……」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_scared", "emotion": "声音很轻", "text": "「……看不见了。」", "action": "灯透过窗户看向外面的海面。", "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "anon", "portrait": "anon_uneasy", "emotion": "担心", "text": "「灯灯？」", "action": null, "camera": null, "sfx": null, "wait": 0.0 },
+        { "speaker": "tomori", "portrait": "tomori_scared", "emotion": "茫然", "text": "「外面……什么都看不见了。」", "action": null, "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s06_final": {
+      "scene": "s06",
+      "lines": [
+        { "speaker": "anon", "portrait": "anon_uneasy", "emotion": "惊慌", "text": "「大家……！」", "action": "客轮发生一次强烈晃动，船舱灯光全部熄灭。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s07_wake": {
+      "scene": "s07",
+      "lines": [
+        { "speaker": "anon", "portrait": null, "emotion": "发冷", "text": "「……好冷。」", "action": "爱音最终坐起来。", "camera": null, "sfx": null, "wait": 0.0, "pause": 2.0 },
+        { "speaker": "anon", "portrait": null, "emotion": "茫然", "text": "「这里……是哪里？」", "action": "爱音抬头观察周围。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s07_call": {
+      "scene": "s07",
+      "lines": [
+        { "speaker": "anon", "portrait": null, "emotion": "试探", "text": "「爽世……？」", "action": "没有回应。镜头缓慢拉远，展示更大范围的海岸。", "camera": null, "sfx": null, "wait": 0.0, "pause": 1.2 },
+        { "speaker": "anon", "portrait": null, "emotion": "提高声音", "text": "「立希！灯灯！乐奈！」", "action": "仍然没有回应。远处只有森林、岩石和海浪。", "camera": null, "sfx": null, "wait": 0.0, "pause": 1.2 }
+      ]
+    },
+    "s07_lost": {
+      "scene": "s07",
+      "lines": [
+        { "speaker": "anon", "portrait": null, "emotion": "失落", "text": "「大家……都去哪了？」", "action": "爱音站在原地，稍微低下头。", "camera": null, "sfx": null, "wait": 0.0, "pause": 2.0 }
+      ]
+    },
+    "s07_hope": {
+      "scene": "s07",
+      "lines": [
+        { "speaker": "anon", "portrait": null, "emotion": "勉强打起精神", "text": "「一定……还在这附近吧？」", "action": "爱音重新背好吉他包。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    },
+    "s07_final": {
+      "scene": "s07",
+      "lines": [
+        { "speaker": "anon", "portrait": null, "emotion": "下定决心", "text": "「先找到大家再说……」", "action": "镜头从爱音身后展示远处的森林与山脉。", "camera": null, "sfx": null, "wait": 0.0 }
+      ]
+    }
+  }
+}

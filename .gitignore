@@ -1,2 +1,15 @@
 /.vscode/
 /docs/
+/.claude/
+
+# 视觉生图 API 密钥，禁止提交
+.ark_key
+ark_key.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# 本地运行产物（截图 / 临时文件）
+/out/
+/.tmp/

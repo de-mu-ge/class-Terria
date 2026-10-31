@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-10-31T13:23:26",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "records": [
+    {
+      "name": "anon_model_v2",
+      "prompt": "2D 像素艺术角色设定图，16-bit 高精度像素，正面全身站立：一名 16 岁的粉红色长直发少女，齐刘海，发梢垂至腰部，灰色眼睛，嘴角有一颗小虎牙，身高 160cm；穿日式高中冬季制服——白色长袖衬衫、浅灰色西服外套带白色包边、绿色条纹领带、绿色格子百褶裙、绿色及膝袜、黑色制服鞋；背着一个深色吉他包，双手自然下垂，表情开朗自信；像素块清晰、色阶分明、无抖动噪点，纯深蓝色背景，无文字、无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 像素艺术角色设定图，16-bit 高精度像素，正面全身站立：一名 16 岁的粉红色长直发少女，齐刘海，发梢垂至腰部，灰色眼睛，嘴角有一颗小虎牙，身高 160cm；穿日式高中冬季制服——白色长袖衬衫、浅灰色西服外套带白色包边、绿色条纹领带、绿色格子百褶裙、绿色及膝袜、黑色制服鞋；背着一个深色吉他包，双手自然下垂，表情开朗自信；像素块清晰、色阶分明、无抖动噪点，纯深蓝色背景，无文字、无水印",
+        "response_format": "url",
+        "size": "2560x1440",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:22:33",
+      "status": "failed",
+      "error": "HTTP 400: {\"error\":{\"code\":\"OutputImageSensitiveContentDetected.PolicyViolation\",\"message\":\"The request failed because the output image may be related to copyright restrictions. Request id: 021793424153992873b68ad3a5b1c0a1311de00f33c0857a2a219\",\"param\":\"\",\"type\":\"BadRequest\"}}",
+      "seconds": 53.2
+    }
+  ]
+}

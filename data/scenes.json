@@ -1,0 +1,363 @@
+{
+  "order": ["s01", "s02", "s03", "s04", "s05", "s06", "s07"],
+  "scenes": {
+    "s01": {
+      "index": 1,
+      "title": "春日的集合",
+      "stage": "real",
+      "pipeline": "galgame",
+      "music": "calm_daily",
+      "ambience": "wind",
+      "next": "s02",
+      "backgrounds": {
+        "plaza": {
+          "file": "s01_plaza.png",
+          "smooth": true,
+          "label": "樱花广场（春日上午·晴）"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "plaza", "camera": { "zoom": 1.72, "focus": [0.5, 0.1] } },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "wait", "duration": 0.5 },
+        { "cmd": "camera", "from": { "zoom": 1.72, "focus": [0.5, 0.1] }, "to": { "zoom": 1.28, "focus": [0.5, 0.4] }, "duration": 2.6, "ease": "linear" },
+        { "cmd": "camera", "from": { "zoom": 1.28, "focus": [0.5, 0.4] }, "to": { "zoom": 1.0, "focus": [0.5, 0.62] }, "duration": 2.4, "ease": "linear" },
+        { "cmd": "wait", "duration": 0.2 },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_normal", "x": 900, "bottom": 540, "height": 450, "enter": "slide_from_right", "duration": 0.9 },
+        { "cmd": "wait", "duration": 0.2 },
+        { "cmd": "doll_move", "char": "anon", "x": 700, "duration": 0.8, "ease": "out" },
+        { "cmd": "wait", "duration": 0.2 },
+        { "cmd": "camera", "preset": "push_in", "duration": 0.8 },
+        { "cmd": "doll_move", "char": "anon", "x": 660, "bottom": 610, "height": 570, "duration": 0.8, "ease": "out" },
+        { "cmd": "dialogue", "block": "s01_open" },
+        { "cmd": "doll_hide", "char": "anon", "duration": 0.3 },
+        { "cmd": "wait", "duration": 0.2 },
+        { "cmd": "chat", "title": "MyGO!!!!!", "messages": [
+          { "from": "taki", "text": "你到了没有？" },
+          { "from": "taki", "text": "我们已经到了。" },
+          { "from": "taki", "text": "不要迟到。" }
+        ], "per_message": 0.9, "hold": 2.0, "sound": "message_ping" },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_surprised", "x": 660, "bottom": 610, "height": 570, "enter": "fade", "duration": 0.3 },
+        { "cmd": "dialogue", "block": "s01_after_chat" },
+        { "cmd": "doll_hide", "char": "anon", "duration": 0.3 },
+        { "cmd": "camera", "to": { "zoom": 1.18, "focus": [0.74, 0.58] }, "duration": 0.9, "ease": "out" },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_normal", "x": -70, "bottom": 540, "height": 430, "enter": "none" },
+        { "cmd": "doll_move", "char": "anon", "x": 520, "duration": 2.4, "ease": "linear" },
+        { "cmd": "wait", "duration": 0.4 },
+        { "cmd": "fade_out", "duration": 0.5 },
+        { "cmd": "end" }
+      ]
+    },
+    "s02": {
+      "index": 2,
+      "title": "五个人的集合",
+      "stage": "real",
+      "pipeline": "galgame",
+      "music": "bright_daily",
+      "ambience": "wind",
+      "next": "s03",
+      "backgrounds": {
+        "plaza": {
+          "file": "s01_plaza.png",
+          "smooth": true,
+          "label": "樱花广场中景（长椅在右，樱花树在后）"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "plaza", "camera": { "zoom": 1.18, "focus": [0.5, 0.56] } },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "doll_show", "char": "soyo", "doll": "soyo_normal", "x": 320, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "taki", "doll": "taki_normal", "x": 460, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "tomori", "doll": "tomori_normal", "x": 620, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "rana", "doll": "rana_eating", "x": 800, "bottom": 505, "height": 235, "enter": "none" },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_normal", "x": -90, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.5, 0.56] }, "duration": 1.0, "ease": "out" },
+        { "cmd": "doll_move", "char": "anon", "x": 130, "duration": 1.6, "ease": "linear" },
+        { "cmd": "wait", "duration": 0.3 },
+        { "cmd": "dialogue", "block": "s02_arrive" },
+        { "cmd": "camera", "to": { "zoom": 1.3, "focus": [0.63, 0.5] }, "duration": 0.9, "ease": "out" },
+        { "cmd": "dialogue", "block": "s02_tomori" },
+        { "cmd": "camera", "to": { "zoom": 1.3, "focus": [0.82, 0.52] }, "duration": 0.9, "ease": "out" },
+        { "cmd": "dialogue", "block": "s02_rana" },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.5, 0.56] }, "duration": 0.9, "ease": "out" },
+        { "cmd": "dialogue", "block": "s02_depart" },
+        { "cmd": "doll_move", "char": "rana", "x": 810, "bottom": 540, "height": 270, "duration": 0.7, "ease": "out" },
+        { "cmd": "wait", "duration": 0.3 },
+        { "cmd": "camera", "preset": "pull_out", "duration": 1.8 },
+        { "cmd": "wait", "duration": 0.4 },
+        { "cmd": "fade_out", "duration": 0.5 },
+        { "cmd": "end" }
+      ]
+    },
+    "s03": {
+      "index": 3,
+      "title": "出发前往英国",
+      "stage": "real",
+      "pipeline": "galgame",
+      "music": "travel",
+      "ambience": "sea_calm",
+      "next": "s04",
+      "backgrounds": {
+        "port": {
+          "file": "s03_port.png",
+          "smooth": true,
+          "label": "客运港口（客轮停靠）"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "port", "camera": { "zoom": 1.45, "focus": [0.6, 0.42] } },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "wait", "duration": 0.4 },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.5, 0.62] }, "duration": 2.0, "ease": "linear" },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_normal", "x": 240, "bottom": 540, "height": 250, "enter": "fade", "duration": 0.3 },
+        { "cmd": "doll_show", "char": "soyo", "doll": "soyo_normal", "x": 370, "bottom": 540, "height": 250, "enter": "fade", "duration": 0.3 },
+        { "cmd": "doll_show", "char": "taki", "doll": "taki_normal", "x": 490, "bottom": 540, "height": 250, "enter": "fade", "duration": 0.3 },
+        { "cmd": "doll_show", "char": "tomori", "doll": "tomori_normal", "x": 620, "bottom": 540, "height": 250, "enter": "fade", "duration": 0.3 },
+        { "cmd": "doll_show", "char": "rana", "doll": "rana_normal", "x": 770, "bottom": 540, "height": 250, "enter": "fade", "duration": 0.3 },
+        { "cmd": "wait", "duration": 0.3 },
+        { "cmd": "dialogue", "block": "s03_port" },
+        { "cmd": "camera", "to": { "zoom": 1.22, "focus": [0.56, 0.56] }, "duration": 1.0, "ease": "out" },
+        { "cmd": "doll_hide", "char": "soyo", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "taki", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "tomori", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "rana", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "anon", "duration": 0.25 },
+        { "cmd": "wait", "duration": 0.5 },
+        { "cmd": "fade_out", "duration": 0.5 },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.55, 0.5] }, "duration": 0.0 },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "wait", "duration": 1.2 },
+        { "cmd": "fade_out", "duration": 0.5 },
+        { "cmd": "end" }
+      ]
+    },
+    "s04": {
+      "index": 4,
+      "title": "海上的旅行",
+      "stage": "real",
+      "pipeline": "galgame",
+      "music": "sea_travel",
+      "ambience": "sea_calm",
+      "next": "s05",
+      "backgrounds": {
+        "deck": {
+          "file": "s04_deck.png",
+          "smooth": true,
+          "label": "客轮开放甲板（午后·晴）"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "deck", "camera": { "zoom": 1.35, "focus": [0.5, 0.3] } },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "wait", "duration": 0.6 },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.5, 0.52] }, "duration": 2.2, "ease": "linear" },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_happy", "x": 300, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "taki", "doll": "taki_normal", "x": 430, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "soyo", "doll": "soyo_normal", "x": 545, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "tomori", "doll": "tomori_normal", "x": 665, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "rana", "doll": "rana_normal", "x": 800, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "wait", "duration": 0.3 },
+        { "cmd": "dialogue", "block": "s04_deck_a" },
+        { "cmd": "camera", "to": { "zoom": 1.45, "focus": [0.52, 0.44] }, "duration": 0.8, "ease": "out" },
+        { "cmd": "effect", "id": "fish_jump", "x0": 470, "x1": 700, "y0": 300, "height": 40, "duration": 1.1 },
+        { "cmd": "wait", "duration": 0.2 },
+        { "cmd": "dialogue", "block": "s04_deck_b" },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.5, 0.52] }, "duration": 0.8, "ease": "out" },
+        { "cmd": "dialogue", "block": "s04_photo_a" },
+        { "cmd": "dialogue", "block": "s04_photo_b" },
+        { "cmd": "sfx", "id": "shutter" },
+        { "cmd": "photo", "bg": "deck", "caption": "MyGO!!!!!", "duration": 2.4, "cast": [
+          { "char": "anon", "doll": "anon_happy", "x": 0.18 },
+          { "char": "soyo", "doll": "soyo_smile_soft", "x": 0.34 },
+          { "char": "tomori", "doll": "tomori_gentle", "x": 0.5 },
+          { "char": "taki", "doll": "taki_deadpan", "x": 0.66 },
+          { "char": "rana", "doll": "rana_normal", "x": 0.82 }
+        ] },
+        { "cmd": "dialogue", "block": "s04_photo_c" },
+        { "cmd": "camera", "preset": "pull_out", "duration": 2.5 },
+        { "cmd": "wait", "duration": 3.0 },
+        { "cmd": "fade_out", "duration": 0.5 },
+        { "cmd": "end" }
+      ]
+    },
+    "s05": {
+      "index": 5,
+      "title": "异常天气",
+      "stage": "real",
+      "pipeline": "galgame",
+      "music": "storm",
+      "ambience": "wind",
+      "next": "s06",
+      "backgrounds": {
+        "deck": {
+          "file": "s04_deck.png",
+          "smooth": true,
+          "label": "客轮甲板（天气转阴的同一画面）"
+        },
+        "cabin": {
+          "file": "s05_cabin.png",
+          "smooth": true,
+          "label": "客轮内舱（程序化占位背景）"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "deck", "camera": { "zoom": 1.05, "focus": [0.5, 0.42] } },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "tint", "top": "#22303F", "bottom": "#26364A", "top_alpha": 225, "bottom_alpha": 120, "duration": 7.0 },
+        { "cmd": "camera", "to": { "zoom": 1.18, "focus": [0.5, 0.24] }, "duration": 2.0, "ease": "linear" },
+        { "cmd": "camera", "to": { "zoom": 1.05, "focus": [0.5, 0.45] }, "duration": 2.0, "ease": "linear" },
+        { "cmd": "ambience", "id": "storm" },
+        { "cmd": "shake", "amplitude": 2.5, "frequency": 0.5 },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_surprised", "x": 300, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "taki", "doll": "taki_worried", "x": 430, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "soyo", "doll": "soyo_worried", "x": 545, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "tomori", "doll": "tomori_uneasy", "x": 665, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "rana", "doll": "rana_normal", "x": 800, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "signal", "state": "strong" },
+        { "cmd": "dialogue", "block": "s05_weather" },
+        { "cmd": "subtitle", "text": "各位乘客请注意，受突发恶劣天气影响，甲板区域即将关闭，请所有乘客返回室内，并遵守船员安排。", "duration": 6.0 },
+        { "cmd": "doll_hide", "char": "soyo", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "taki", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "tomori", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "rana", "duration": 0.25 },
+        { "cmd": "doll_hide", "char": "anon", "duration": 0.25 },
+        { "cmd": "camera", "to": { "zoom": 1.2, "focus": [0.5, 0.5] }, "duration": 0.8, "ease": "out" },
+        { "cmd": "wait", "duration": 0.4 },
+        { "cmd": "fade_out", "duration": 0.4 },
+        { "cmd": "bg", "id": "cabin", "camera": { "zoom": 1.05, "focus": [0.5, 0.5] } },
+        { "cmd": "tint", "top": "#0B1219", "bottom": "#101822", "top_alpha": 150, "bottom_alpha": 80, "duration": 0.1, "strength": 0.25 },
+        { "cmd": "fade_in", "duration": 0.4 },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_surprised", "x": 300, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "taki", "doll": "taki_annoyed", "x": 430, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "soyo", "doll": "soyo_serious", "x": 545, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "tomori", "doll": "tomori_uneasy", "x": 665, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "rana", "doll": "rana_normal", "x": 800, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "sfx", "id": "thunder" },
+        { "cmd": "shake", "amplitude": 3.0, "frequency": 0.5, "duration": 1.6 },
+        { "cmd": "dialogue", "block": "s05_cabin" },
+        { "cmd": "signal", "state": "weak" },
+        { "cmd": "camera", "to": { "zoom": 1.35, "focus": [0.5, 0.38] }, "duration": 1.0, "ease": "out" },
+        { "cmd": "sfx", "id": "signal_lost" },
+        { "cmd": "signal", "state": "lost" },
+        { "cmd": "dialogue", "block": "s05_comms" },
+        { "cmd": "shake_stop" },
+        { "cmd": "fade_out", "duration": 0.5 },
+        { "cmd": "end" }
+      ]
+    },
+    "s06": {
+      "index": 6,
+      "title": "未知岛屿",
+      "stage": "real",
+      "pipeline": "galgame",
+      "music": "storm",
+      "ambience": "storm",
+      "next": "s07",
+      "backgrounds": {
+        "storm": {
+          "file": "s05_storm.png",
+          "smooth": true,
+          "label": "风暴海面（客轮在风浪中）"
+        },
+        "island": {
+          "file": "s06_island.png",
+          "smooth": true,
+          "label": "浓雾中的未知岛屿"
+        },
+        "cabin": {
+          "file": "s05_cabin.png",
+          "smooth": true,
+          "label": "客轮内舱（程序化占位背景）"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "storm", "camera": { "zoom": 1.2, "focus": [0.45, 0.5] } },
+        { "cmd": "fade_in", "duration": 0.6 },
+        { "cmd": "shake", "amplitude": 2.0, "frequency": 0.4 },
+        { "cmd": "camera", "to": { "zoom": 1.0, "focus": [0.55, 0.45] }, "duration": 3.0, "ease": "linear" },
+        { "cmd": "tint", "top": "#3E5A7A", "bottom": "#26364A", "top_alpha": 120, "bottom_alpha": 40, "duration": 4.0 },
+        { "cmd": "wait", "duration": 1.2 },
+        { "cmd": "bg", "id": "island", "transition": "crossfade", "duration": 2.0, "camera": { "zoom": 1.35, "focus": [0.5, 0.45] } },
+        { "cmd": "camera", "to": { "zoom": 1.55, "focus": [0.5, 0.52] }, "duration": 1.5, "ease": "out" },
+        { "cmd": "camera", "to": { "zoom": 1.9, "focus": [0.5, 0.55] }, "duration": 1.5, "ease": "out" },
+        { "cmd": "camera", "to": { "zoom": 2.2, "focus": [0.5, 0.45] }, "duration": 1.5, "ease": "out" },
+        { "cmd": "wait", "duration": 3.0 },
+        { "cmd": "shake_stop" },
+        { "cmd": "bg", "id": "cabin", "camera": { "zoom": 1.15, "focus": [0.5, 0.45] } },
+        { "cmd": "tint", "top": "#101822", "bottom": "#0B1219", "top_alpha": 180, "bottom_alpha": 120, "duration": 0.1, "strength": 0.45 },
+        { "cmd": "doll_show", "char": "anon", "doll": "anon_uneasy", "x": 300, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "taki", "doll": "taki_worried", "x": 430, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "soyo", "doll": "soyo_surprised", "x": 545, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "tomori", "doll": "tomori_scared", "x": 665, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "doll_show", "char": "rana", "doll": "rana_normal", "x": 800, "bottom": 540, "height": 270, "enter": "none" },
+        { "cmd": "sfx", "id": "thunder" },
+        { "cmd": "shake", "amplitude": 3.0, "frequency": 0.5, "duration": 1.2 },
+        { "cmd": "doll_portrait", "char": "anon", "doll": "anon_uneasy" },
+        { "cmd": "tint", "top": "#000000", "bottom": "#000000", "top_alpha": 235, "bottom_alpha": 215, "duration": 0.5, "strength": 0.85 },
+        { "cmd": "dialogue", "block": "s06_final" },
+        { "cmd": "music", "id": "none" },
+        { "cmd": "flash", "duration": 0.15 },
+        { "cmd": "black", "duration": 2.0 },
+        { "cmd": "pipeline", "id": "pixel", "char": "anon", "pose": "lying", "x": 330 },
+        { "cmd": "ambience", "id": "waves" },
+        { "cmd": "end" }
+      ]
+    },
+    "s07": {
+      "index": 7,
+      "title": "直到再次相遇",
+      "stage": "unknown",
+      "pipeline": "pixel",
+      "music": "unknown_world",
+      "ambience": "waves",
+      "next": null,
+      "backgrounds": {
+        "coast": {
+          "file": "s07_coast.png",
+          "smooth": false,
+          "label": "未知岛屿的像素海岸"
+        }
+      },
+      "timeline": [
+        { "cmd": "bg", "id": "coast", "camera": { "zoom": 2.0, "focus": [0.5, 0.6] } },
+        { "cmd": "pipeline", "id": "pixel", "char": "anon", "pose": "lying", "x": 330 },
+        { "cmd": "black", "duration": 3.0 },
+        { "cmd": "sfx", "id": "splash" },
+        { "cmd": "fade_in", "duration": 1.2 },
+        { "cmd": "wait", "duration": 1.2 },
+        { "cmd": "sprite", "char": "anon", "pose": "lying_breathe" },
+        { "cmd": "wait", "duration": 1.2 },
+        { "cmd": "sprite", "char": "anon", "pose": "lying" },
+        { "cmd": "wait", "duration": 1.2 },
+        { "cmd": "sprite", "char": "anon", "pose": "lying_breathe" },
+        { "cmd": "wait", "duration": 1.0 },
+        { "cmd": "sprite", "char": "anon", "pose": "sitting" },
+        { "cmd": "wait", "duration": 1.4 },
+        { "cmd": "dialogue", "block": "s07_wake" },
+        { "cmd": "sprite", "char": "anon", "pose": "idle" },
+        { "cmd": "wait", "duration": 0.8 },
+        { "cmd": "sprite", "char": "anon", "flip": true },
+        { "cmd": "wait", "duration": 0.9 },
+        { "cmd": "sprite", "char": "anon", "flip": false },
+        { "cmd": "wait", "duration": 0.9 },
+        { "cmd": "dialogue", "block": "s07_call" },
+        { "cmd": "camera", "to": { "zoom": 1.7, "focus": [0.5, 0.62] }, "duration": 2.0, "ease": "out" },
+        { "cmd": "wait", "duration": 0.8 },
+        { "cmd": "dialogue", "block": "s07_lost" },
+        { "cmd": "wait", "duration": 2.0 },
+        { "cmd": "dialogue", "block": "s07_hope" },
+        { "cmd": "camera", "to": { "zoom": 1.85, "focus": [0.5, 0.34] }, "duration": 1.5, "ease": "out" },
+        { "cmd": "wait", "duration": 0.5 },
+        { "cmd": "dialogue", "block": "s07_final" },
+        { "cmd": "camera", "to": { "zoom": 2.0, "focus": [0.5, 0.6] }, "duration": 1.2, "ease": "out" },
+        { "cmd": "wait", "duration": 0.4 },
+        { "cmd": "hint", "visible": true, "title": "操作提示", "lines": ["← → / A D　移动", "空格　跳跃", "E　互动", "Esc　菜单"] },
+        { "cmd": "hud", "visible": true, "life": 0.78, "temp": 0.55 },
+        { "cmd": "task", "visible": true, "title": "寻找失散的伙伴", "rows": [["当前角色", "千早爱音"], ["当前地点", "未知海岸"], ["同行伙伴", "无"]] },
+        { "cmd": "ambience", "id": "waves" },
+        { "cmd": "wait", "duration": 3.0 },
+        { "cmd": "handoff" }
+      ]
+    }
+  }
+}

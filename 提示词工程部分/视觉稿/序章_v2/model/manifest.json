@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-10-31T13:15:50",
+  "model": "doubao-seedream-5-0-pro-260628",
+  "records": [
+    {
+      "name": "p1_coast_wakeup",
+      "prompt": "2D 横版像素艺术游戏画面，高精度像素，接近《泰拉瑞亚》但细节更丰富：阴沉的未知海岸，固定正侧面视角；前景是沙滩、几丛海岸草与散落岩石，中景是起浪的海面，远景是针叶林与雪山剪影，天空压着厚重云层；画面中央偏左有一名倒地的少女像素精灵，身旁放着一个吉他包；低饱和冷蓝色调，光照统一从左上方来，环境占据画面主体，像素块清晰、有 16px 网格感，层次靠色阶而非渐变；无 UI、无文字、无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 横版像素艺术游戏画面，高精度像素，接近《泰拉瑞亚》但细节更丰富：阴沉的未知海岸，固定正侧面视角；前景是沙滩、几丛海岸草与散落岩石，中景是起浪的海面，远景是针叶林与雪山剪影，天空压着厚重云层；画面中央偏左有一名倒地的少女像素精灵，身旁放着一个吉他包；低饱和冷蓝色调，光照统一从左上方来，环境占据画面主体，像素块清晰、有 16px 网格感，层次靠色阶而非渐变；无 UI、无文字、无水印",
+        "response_format": "url",
+        "size": "2560x1440",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:13:07",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/0576dd8ad39b8b6fffc66526b1e6e0f2e7be65642885324397120/Image/2127558110/02179342358824656eb7e2f0e6e1b62566cfff6b8b93da8dd6750.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v2\\model\\p1_coast_wakeup.jpg",
+      "bytes": 277331,
+      "seconds": 54.4
+    },
+    {
+      "name": "p2_forest_edge",
+      "prompt": "2D 横版像素艺术游戏画面，高精度像素，固定正侧面视角：从海岸向内陆延伸的第一片针叶林与斜坡雪地，地表有积雪、裸岩与低矮灌木；中层是密集的深色针叶林剪影，远景是层叠雪山，天空是阴沉冷蓝并有一道从云缝落下的光柱；雪地上一串脚印延伸到画面右侧，暗示可探索方向；低饱和冷色调，唯一点缀是远处一小簇暖橙色（营火余烬）；像素块清晰、有 16px 网格感，色阶分明；无 UI、无文字、无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 横版像素艺术游戏画面，高精度像素，固定正侧面视角：从海岸向内陆延伸的第一片针叶林与斜坡雪地，地表有积雪、裸岩与低矮灌木；中层是密集的深色针叶林剪影，远景是层叠雪山，天空是阴沉冷蓝并有一道从云缝落下的光柱；雪地上一串脚印延伸到画面右侧，暗示可探索方向；低饱和冷色调，唯一点缀是远处一小簇暖橙色（营火余烬）；像素块清晰、有 16px 网格感，色阶分明；无 UI、无文字、无水印",
+        "response_format": "url",
+        "size": "2560x1440",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:14:02",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/5d8f6828f1bd0cacbd1a181fc268ea31c8647a016246324397120/Image/2127558110/021793423642610a7468c13ae862cf181a1dbcac0db1f8286f8d5.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v2\\model\\p2_forest_edge.jpg",
+      "bytes": 315026,
+      "seconds": 52.4
+    },
+    {
+      "name": "p3_storm_transit",
+      "prompt": "2D 横版像素艺术转场画面，宽幅电影感构图：暴风雨中一艘大型客轮在巨浪里航行，船体倾斜，浪花拍打船舷；远处浓雾中隐约浮现岛屿的山脉轮廓；天空是压抑的深灰蓝色云层，海面翻涌；冷色调为主，船舱窗口透出几点暖黄灯光，是画面里唯一的暖色；像素块清晰、有 16px 网格感，色阶分明；无 UI、无文字、无水印",
+      "payload": {
+        "model": "doubao-seedream-5-0-pro-260628",
+        "prompt": "2D 横版像素艺术转场画面，宽幅电影感构图：暴风雨中一艘大型客轮在巨浪里航行，船体倾斜，浪花拍打船舷；远处浓雾中隐约浮现岛屿的山脉轮廓；天空是压抑的深灰蓝色云层，海面翻涌；冷色调为主，船舱窗口透出几点暖黄灯光，是画面里唯一的暖色；像素块清晰、有 16px 网格感，色阶分明；无 UI、无文字、无水印",
+        "response_format": "url",
+        "size": "2560x1440",
+        "stream": false,
+        "watermark": false
+      },
+      "started": "2026-10-31T13:14:54",
+      "status": "ok",
+      "url": "https://ark-acg-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-5-0-pro/eec79c285582be29e6908c64fe2cbace1d0bce189496324397120/Image/2127558110/021793423694981ecb0d1ecabc2ef46c8096e92eb285582c97cee.jpeg",
+      "path": "D:\\project\\项目\\游戏\\提示词工程部分\\视觉稿\\序章_v2\\model\\p3_storm_transit.jpg",
+      "bytes": 305675,
+      "seconds": 56.2
+    }
+  ]
+}

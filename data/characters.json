@@ -1,0 +1,123 @@
+{
+  "characters": [
+    {
+      "id": "anon",
+      "name": "千早爱音",
+      "short_name": "爱音",
+      "color": "#FF8899",
+      "color_status": "official",
+      "role": "玩家初始操控角色，吉他",
+      "paper_dolls": {
+        "anon_normal": "anon/anon_normal.png",
+        "anon_sleepy": "anon/anon_sleepy.png",
+        "anon_worried": "anon/anon_worried.png",
+        "anon_surprised": "anon/anon_surprised.png",
+        "anon_smile": "anon/anon_smile.png",
+        "anon_happy": "anon/anon_happy.png",
+        "anon_proud": "anon/anon_proud.png",
+        "anon_pout": "anon/anon_pout.png",
+        "anon_curious": "anon/anon_curious.png",
+        "anon_uneasy": "anon/anon_uneasy.png"
+      },
+      "sprite": {
+        "source": "procedural",
+        "frames": ["lying", "lying_breathe", "sitting", "idle", "walk_1", "walk_2"],
+        "scale": 2
+      }
+    },
+    {
+      "id": "tomori",
+      "name": "高松灯",
+      "short_name": "灯",
+      "color": "#88B4FF",
+      "color_status": "provisional",
+      "role": "主唱，失散伙伴",
+      "paper_dolls": {
+        "tomori_normal": "tomori/tomori_normal.png",
+        "tomori_wonder": "tomori/tomori_wonder.png",
+        "tomori_gentle": "tomori/tomori_gentle.png",
+        "tomori_uneasy": "tomori/tomori_uneasy.png",
+        "tomori_scared": "tomori/tomori_scared.png"
+      },
+      "sprite": {
+        "source": "procedural",
+        "frames": ["idle"],
+        "scale": 2
+      }
+    },
+    {
+      "id": "soyo",
+      "name": "长崎爽世",
+      "short_name": "爽世",
+      "color": "#F2D06B",
+      "color_status": "provisional",
+      "role": "贝斯，失散伙伴，负责行程安排",
+      "paper_dolls": {
+        "soyo_normal": "soyo/soyo_normal.png",
+        "soyo_gentle": "soyo/soyo_gentle.png",
+        "soyo_smile_soft": "soyo/soyo_smile_soft.png",
+        "soyo_worried": "soyo/soyo_worried.png",
+        "soyo_surprised": "soyo/soyo_surprised.png",
+        "soyo_serious": "soyo/soyo_serious.png"
+      },
+      "sprite": {
+        "source": "procedural",
+        "frames": ["idle"],
+        "scale": 2
+      }
+    },
+    {
+      "id": "taki",
+      "name": "椎名立希",
+      "short_name": "立希",
+      "color": "#D96C6C",
+      "color_status": "provisional",
+      "role": "鼓，失散伙伴",
+      "paper_dolls": {
+        "taki_normal": "taki/taki_normal.png",
+        "taki_impatient": "taki/taki_impatient.png",
+        "taki_annoyed": "taki/taki_annoyed.png",
+        "taki_deadpan": "taki/taki_deadpan.png",
+        "taki_surprised": "taki/taki_surprised.png",
+        "taki_worried": "taki/taki_worried.png"
+      },
+      "sprite": {
+        "source": "procedural",
+        "frames": ["idle"],
+        "scale": 2
+      }
+    },
+    {
+      "id": "rana",
+      "name": "要乐奈",
+      "short_name": "乐奈",
+      "color": "#7FD1B9",
+      "color_status": "provisional",
+      "role": "吉他，失散伙伴",
+      "paper_dolls": {
+        "rana_normal": "rana/rana_normal.png",
+        "rana_eating": "rana/rana_eating.png",
+        "rana_curious": "rana/rana_curious.png"
+      },
+      "sprite": {
+        "source": "procedural",
+        "frames": ["idle"],
+        "scale": 2
+      }
+    }
+  ],
+  "narrator": {
+    "id": "narrator",
+    "name": ""
+  },
+  "placeholder": {
+    "width_ratio": 0.6667,
+    "corner_radius": 18,
+    "outline_width": 2,
+    "name_size_role": "name",
+    "name_top_offset": 26,
+    "tag_size_role": "menu_small",
+    "tag_bottom_offset": 30,
+    "body_alpha": 0.72
+  }
+}
